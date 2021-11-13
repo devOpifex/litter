@@ -46,6 +46,7 @@ export class ActionButton extends LitElement {
 	render() {
 		return html`<button 
 			@click="${this._increment}" 
+			@change="${this._increment}" 
 			class='${this.class}' 
 			name='${this.name}'
 			id='${this.id}'

@@ -8,3 +8,4 @@
 ^dev$
 ^LICENSE\.md$
 ^jsconfig\.json$
+^makefile$
