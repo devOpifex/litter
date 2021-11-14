@@ -6,7 +6,7 @@
 \usage{
 litActionButton(
   name,
-  label = "Click me",
+  content = "Click me",
   ...,
   id = NULL,
   class = NULL,
@@ -16,7 +16,8 @@ litActionButton(
 \arguments{
 \item{name}{Name of the input.}
 
-\item{label}{Label of the button.}
+\item{content}{Content of the button, a character string
+or valid \code{shiny::tags}.}
 
 \item{...}{Passed to props.}
 

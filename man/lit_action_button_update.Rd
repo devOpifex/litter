@@ -4,16 +4,17 @@
 \alias{lit_action_button_update}
 \title{Update Action Button}
 \usage{
-lit_action_button_update(session, selector, ..., label = NULL)
+lit_action_button_update(session, selector, ..., content = NULL)
 }
 \arguments{
 \item{session}{A valid shiny session.}
 
 \item{selector}{A selector for the buttons to update.}
 
-\item{...}{Passed to \code{props}.}
+\item{...}{Passed to props.}
 
-\item{label}{Label of the action button.}
+\item{content}{Content of the button, a character string
+or valid \code{shiny::tags}.}
 }
 \description{
 Update a action buttons.

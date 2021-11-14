@@ -6,7 +6,8 @@
 #' @param id Id of the input.
 #' @param ... Passed to props.
 #' @param class Class of the button.
-#' @param label Label of the button.
+#' @param content Content of the button, a character string
+#' or valid `shiny::tags`.
 #' @param callback Callback function to run on click
 #' if `NULL` then the value is sent to the server.
 #' Otherwise a JavaScript callback function that accepts
@@ -35,25 +36,31 @@
 #' if(interactive())
 #' 	shinyApp(ui, server)
 #' 
+#' @importFrom shiny tags
+#' 
 #' @export 
 litActionButton <- function(
 	name,
-	label = "Click me", 
+	content = "Click me", 
 	...,
 	id = NULL,
 	class = NULL,
 	callback = NULL
 ) {
 	props <- serialise2(...)
+
+	if(inherits(content, "character"))
+		content <- tags$span(content)
+
 	tag2(
 		"litter-button", 
 		.script = "button",
 		id = id,
 		class = class,
 		name = name, 
-		label = label, 
 		props = props,
-		callback = callback
+		callback = callback,
+		content
 	)
 }
 
@@ -63,8 +70,7 @@ litActionButton <- function(
 #' 
 #' @param session A valid shiny session.
 #' @param selector A selector for the buttons to update.
-#' @param ... Passed to `props`.
-#' @param label Label of the action button.
+#' @inheritParams litActionButton
 #' 
 #' @examples 
 #' library(shiny)
@@ -102,16 +108,21 @@ litActionButton <- function(
 #' if(interactive())
 #' 	shinyApp(ui, server)
 #' 
+#' @importFrom shiny tags
+#' 
 #' @export 
 lit_action_button_update <- function(
 	session,
 	selector,
 	...,
-	label = NULL
+	content = NULL
 ) {
+	if(!is.null(content) && inherits(content, "character"))
+		content <- as.character(tags$span(content))
+		
 	msg <- list(
 		selector = selector,
-		label = label,
+		content = content,
 		props = list(...)
 	)
 	send_message(

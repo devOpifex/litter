@@ -12,7 +12,6 @@ export class ActionButton extends LitElement {
 
 	static properties = {
 		class: {type: String},
-		label: {type: String},
 		count: {type: Number},
 		name: {type: String},
 		id: {type: String},
@@ -22,7 +21,6 @@ export class ActionButton extends LitElement {
 
 	constructor() {
 		super();
-		this.label = 'Click me';
 		this.count = 0;
 		this.props = {};
 		this.id = null;
@@ -51,6 +49,11 @@ export class ActionButton extends LitElement {
 		);
 	}
 
+	get _slottedChildren() {
+		const slot = this.shadowRoot.querySelector('slot');
+		return slot;
+	}
+
 	render() {
 		return html`<button 
 			@click="${this._increment}" 
@@ -58,7 +61,7 @@ export class ActionButton extends LitElement {
 			name='${this.name}'
 			id='${this.id}'
 			props='${this.props}'>
-			${this.label}
+			<slot></slot>
 		</button>`;
 	}
 }
@@ -67,8 +70,10 @@ window.Shiny.addCustomMessageHandler('litter-action-button', (msg) => {
 	if(msg.props.length > 0)
 		$(msg.selector).attr('props', JSON.stringify(msg.props));
 
-	if(msg.label)
-		$(msg.selector).attr('label', msg.label);
+	if(msg.content)
+		$(msg.selector)
+			.children()
+			.html(msg.content)
 });
 
 window.customElements.define('litter-button', ActionButton);

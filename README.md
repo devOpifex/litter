@@ -18,6 +18,8 @@ devtools::install_github("devOpifex/litter")
 
 ## Example
 
+{litter} allows using multiple inputs with a single observer.
+
 ``` r
 library(shiny)
 library(litter)
@@ -25,11 +27,12 @@ library(litter)
 ui <- fluidPage(
 	litActionButton(
 		"btn",
-		"First btn"
+		icon("cog"),
+		"Button #1"
 	),
 	litActionButton(
 		"btn",
-		"Second btn"
+		"Button #2"
 	)
 )
 
