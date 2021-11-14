@@ -26,12 +26,12 @@ library(litter)
 
 ui <- fluidPage(
 	litActionButton(
-		"btn",
+		name = "btn",
 		icon("cog"),
 		"Button #1"
 	),
 	litActionButton(
-		"btn",
+		name = "btn",
 		"Button #2"
 	)
 )
