@@ -9,4 +9,4 @@
 			id='${this.id}'
 			props='${this.props}'
 			placeholder='${this.placeholder}'
-			value='${this.value}'>`}}window.customElements.define("text-input",r),window.Shiny.addCustomMessageHandler("litter-text-input",(t=>{t.props.length>0&&$(t.selector).attr("props",JSON.stringify(t.props)),t.value&&$(t.selector).attr("value",t.value)}))},235:t=>{t.exports=Shiny},311:t=>{t.exports=jQuery}},t=>{t.O(0,[560],(()=>(650,t(t.s=650)))),t.O()}]);
+			.value='${this.value}'>`}}window.customElements.define("text-input",r),window.Shiny.addCustomMessageHandler("litter-text-input",(t=>{t.props.length>0&&$(t.selector).attr("props",JSON.stringify(t.props)),t.value&&$(t.selector).attr("value",t.value)}))},235:t=>{t.exports=Shiny},311:t=>{t.exports=jQuery}},t=>{t.O(0,[560],(()=>(650,t(t.s=650)))),t.O()}]);

@@ -81,7 +81,7 @@ export class Text extends LitElement {
 			id='${this.id}'
 			props='${this.props}'
 			placeholder='${this.placeholder}'
-			value='${this.value}'>`;
+			.value='${this.value}'>`;
 	}
 }
 
