@@ -86,3 +86,11 @@ export class Text extends LitElement {
 }
 
 window.customElements.define('text-input', Text);
+
+window.Shiny.addCustomMessageHandler('litter-text-input', (msg) => {
+	if(msg.props.length > 0)
+		$(msg.selector).attr('props', JSON.stringify(msg.props));
+
+	if(msg.value)
+		$(msg.selector).attr('value', msg.value);
+});

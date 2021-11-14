@@ -35,3 +35,21 @@ litTextInput <- function(
 		return = match.arg(return)
 	)
 }
+
+lit_text_input_update <- function(
+	session,
+	selector,
+	...,
+	value = NULL
+){
+	msg <- list(
+		selector = selector,
+		value = value,
+		props = list(...)
+	)
+	send_message(
+		session,
+		"litter-text-input",
+		msg
+	)	
+}
