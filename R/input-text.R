@@ -24,7 +24,7 @@ litTextInput <- function(
 ) {
 	props <- serialise2(...)
 	tag2(
-		"text-input", 
+		"litter-text", 
 		.script = "text",
 		id = id,
 		class = class,

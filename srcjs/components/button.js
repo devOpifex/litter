@@ -71,4 +71,4 @@ window.Shiny.addCustomMessageHandler('litter-action-button', (msg) => {
 		$(msg.selector).attr('label', msg.label);
 });
 
-window.customElements.define('action-button', ActionButton);
+window.customElements.define('litter-button', ActionButton);

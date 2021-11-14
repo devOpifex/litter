@@ -7,5 +7,9 @@
     "import": "./srcjs/components/text.js",
     "dependOn": "lit"
   },
+  "select": {
+    "import": "./srcjs/components/select.js",
+    "dependOn": "lit"
+  },
   "lit": "lit"
 }

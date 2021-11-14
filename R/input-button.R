@@ -46,7 +46,7 @@ litActionButton <- function(
 ) {
 	props <- serialise2(...)
 	tag2(
-		"action-button", 
+		"litter-button", 
 		.script = "button",
 		id = id,
 		class = class,
