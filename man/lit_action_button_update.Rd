@@ -16,7 +16,7 @@ lit_action_button_update(session, selector, ..., label = NULL)
 \item{label}{Label of the action button.}
 }
 \description{
-Update an action button.
+Update a action buttons.
 }
 \examples{
 library(shiny)

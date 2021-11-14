@@ -59,7 +59,7 @@ litActionButton <- function(
 
 #' Update Action Button
 #' 
-#' Update an action button.
+#' Update a action buttons.
 #' 
 #' @param session A valid shiny session.
 #' @param selector A selector for the buttons to update.
