@@ -16,6 +16,7 @@ export class ActionButton extends LitElement {
 		count: {type: Number},
 		name: {type: String},
 		id: {type: String},
+		callback: {type: String},
 		props: {}
 	}
 
@@ -30,6 +31,13 @@ export class ActionButton extends LitElement {
 
 	_increment(e) {
 		this.count++
+
+		if(this.callback){
+			let cb = eval(this.callback);
+			cb(this);
+			return ;
+		}
+
 		window.Shiny.setInputValue(
 			this.name + ':litter.parse', 
 			{

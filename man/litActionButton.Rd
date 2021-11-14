@@ -4,7 +4,14 @@
 \alias{litActionButton}
 \title{Lit Action Button}
 \usage{
-litActionButton(name, label = "Click me", ..., id = NULL, class = NULL)
+litActionButton(
+  name,
+  label = "Click me",
+  ...,
+  id = NULL,
+  class = NULL,
+  callback = NULL
+)
 }
 \arguments{
 \item{name}{Name of the input.}
@@ -16,6 +23,11 @@ litActionButton(name, label = "Click me", ..., id = NULL, class = NULL)
 \item{id}{Id of the input.}
 
 \item{class}{Class of the button.}
+
+\item{callback}{Callback function to run on click
+if \code{NULL} then the value is sent to the server.
+Otherwise a JavaScript callback function that accepts
+the instance of the button class (e.g.: \code{this}).}
 }
 \description{
 Create an action button.

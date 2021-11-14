@@ -7,6 +7,10 @@
 #' @param ... Passed to props.
 #' @param class Class of the button.
 #' @param label Label of the button.
+#' @param callback Callback function to run on click
+#' if `NULL` then the value is sent to the server.
+#' Otherwise a JavaScript callback function that accepts
+#' the instance of the button class (e.g.: `this`).
 #' 
 #' @examples 
 #' library(shiny)
@@ -37,7 +41,8 @@ litActionButton <- function(
 	label = "Click me", 
 	...,
 	id = NULL,
-	class = NULL
+	class = NULL,
+	callback = NULL
 ) {
 	props <- serialise2(...)
 	tag2(
@@ -47,7 +52,8 @@ litActionButton <- function(
 		class = class,
 		name = name, 
 		label = label, 
-		props = props
+		props = props,
+		callback = callback
 	)
 }
 
