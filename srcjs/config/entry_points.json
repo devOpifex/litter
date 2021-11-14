@@ -1,3 +1,7 @@
 {
-  "button": "./srcjs/components/button.js"
+  "button": {
+    "import": "./srcjs/components/button.js",
+    "dependOn": "lit"
+  },
+  "lit": "lit"
 }

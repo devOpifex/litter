@@ -1,4 +1,4 @@
-#' Action Button
+#' Lit Action Button
 #' 
 #' Create an action button.
 #' 
@@ -9,7 +9,7 @@
 #' @param label Label of the button.
 #' 
 #' @export 
-lActionButton <- function(
+litActionButton <- function(
 	name,
 	label = "Click me", 
 	...,
@@ -19,7 +19,7 @@ lActionButton <- function(
 	props <- serialise2(...)
 	tag2(
 		"action-button", 
-		.script = "button.js",
+		.script = "button",
 		id = id,
 		class = class,
 		name = name, 
@@ -28,13 +28,25 @@ lActionButton <- function(
 	)
 }
 
-update_action_button <- function(
+#' Update Action Button
+#' 
+#' Update an action button.
+#' 
+#' @param session A valid shiny session.
+#' @param selector A selector for the buttons to update.
+#' @param ... Passed to `props`.
+#' @param label Label of the action button.
+#' 
+#' @export 
+lit_action_button_update <- function(
 	session,
 	selector,
-	...
+	...,
+	label = NULL
 ) {
 	msg <- list(
 		selector = selector,
+		label = label,
 		props = list(...)
 	)
 	send_message(

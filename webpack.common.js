@@ -59,7 +59,7 @@ var plugins = [
 var options = {
   entry: entryPoints,
   output: {
-    filename: '[name].js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, JSON.parse(outputPath)),
   },
   externals: externals,
@@ -69,7 +69,10 @@ var options = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  plugins: plugins
+  plugins: plugins,
+  optimization: {
+    runtimeChunk: 'single',
+  } 
 };
 
 // add misc

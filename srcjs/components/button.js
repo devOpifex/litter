@@ -46,7 +46,6 @@ export class ActionButton extends LitElement {
 	render() {
 		return html`<button 
 			@click="${this._increment}" 
-			@change="${this._increment}" 
 			class='${this.class}' 
 			name='${this.name}'
 			id='${this.id}'
@@ -57,7 +56,11 @@ export class ActionButton extends LitElement {
 }
 
 window.Shiny.addCustomMessageHandler('litter-action-button', (msg) => {
-	$(msg.selector).attr('props', JSON.stringify(msg.props));
+	if(msg.props.length > 0)
+		$(msg.selector).attr('props', JSON.stringify(msg.props));
+
+	if(msg.label)
+		$(msg.selector).attr('label', msg.label);
 });
 
 window.customElements.define('action-button', ActionButton);

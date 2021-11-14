@@ -9,3 +9,4 @@
 ^LICENSE\.md$
 ^jsconfig\.json$
 ^makefile$
+^test\.R$

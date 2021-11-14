@@ -4,6 +4,17 @@
 #' 
 #' @keywords internal
 dep <- function(script){
+	script <- sprintf("%s.bundle.js", script)
+
+	# add common
+	script <- c(
+		"lit.bundle.js",
+		"runtime.bundle.js",
+		script
+	)
+
+	script <- paste0("assets/", script)
+
 	htmlDependency(
 		"litter",
 		version = utils::packageVersion("litter"),
