@@ -18,3 +18,40 @@ lit_action_button_update(session, selector, ..., label = NULL)
 \description{
 Update an action button.
 }
+\examples{
+library(shiny)
+
+ui <- fluidPage(
+	litActionButton(
+		"btn",
+		"First btn"
+	),
+	litActionButton(
+		"btn",
+		"Second btn"
+	),
+	litActionButton(
+		"update",
+		"Parent"
+	)
+)
+
+server <- function(input, output, session){
+	observeEvent(input$btn, {
+		print(input$btn)
+	})
+
+	observeEvent(input$update, {
+		lit_action_button_update(
+			session,
+			selector = select_inputs("btn"),
+			label = "LABEL",
+			x = 1
+		)
+	})
+}
+
+if(interactive())
+	shinyApp(ui, server)
+
+}

@@ -12,3 +12,5 @@ Imports:
     shiny,
     jsonlite,
     htmltools
+Suggests:
+    packer

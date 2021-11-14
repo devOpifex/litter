@@ -20,3 +20,27 @@ litActionButton(name, label = "Click me", ..., id = NULL, class = NULL)
 \description{
 Create an action button.
 }
+\examples{
+library(shiny)
+
+ui <- fluidPage(
+	litActionButton(
+		"btn",
+		"First btn"
+	),
+	litActionButton(
+		"btn",
+		"Second btn"
+	)
+)
+
+server <- function(input, output, session){
+	observeEvent(input$btn, {
+		print(input$btn)
+	})
+}
+
+if(interactive())
+	shinyApp(ui, server)
+
+}

@@ -15,13 +15,14 @@ export class Text extends LitElement {
 		value: {type: String},
 		name: {type: String},
 		id: {type: String},
+		return: {type: String},
 		placeholder: {type: String},
 		props: {}
 	}
 
 	constructor() {
 		super();
-
+		this.return = 'enter';
 		this._input = {};
 		this.value = '';
 		this.placeholder = '';
@@ -35,6 +36,26 @@ export class Text extends LitElement {
 	}
 
 	_sendValue(event) {
+		this.value = this._input.value;
+		
+		if(this.return == 'never')
+			return;
+
+		if(this.return == 'instant'){
+			window.Shiny.setInputValue(
+				this.name + ':litter.parse', 
+				{
+					props: this.props, 
+					value: this.value,
+					id: this.id
+				},
+				{
+					priority: 'event'
+				}
+			);
+			return;
+		}
+
 		if(event.keyCode != 13)
 			return;
 
@@ -42,7 +63,7 @@ export class Text extends LitElement {
 			this.name + ':litter.parse', 
 			{
 				props: this.props, 
-				value: this._input.value,
+				value: this.value,
 				id: this.id
 			},
 			{
