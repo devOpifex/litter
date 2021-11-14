@@ -5,13 +5,14 @@
 #' @param name Name of the input.
 #' @param id Id of the input.
 #' @param ... Passed to props.
-#' @param class Class of the button.
 #' @param content Content of the button, a character string
 #' or valid `shiny::tags`.
 #' @param callback Callback function to run on click
 #' if `NULL` then the value is sent to the server.
 #' Otherwise a JavaScript callback function that accepts
 #' the instance of the button class (e.g.: `this`).
+#' @param color Color of button, e.g.: `outline-primary`.
+#' @param size Size of the button.
 #' 
 #' @examples 
 #' library(shiny)
@@ -44,8 +45,9 @@ litActionButton <- function(
 	content = "Click me", 
 	...,
 	id = NULL,
-	class = NULL,
-	callback = NULL
+	callback = NULL,
+	color = lit_default_color(),
+	size = c("standard", "small", "large")
 ) {
 	props <- serialise2(...)
 
@@ -56,10 +58,11 @@ litActionButton <- function(
 		"litter-button", 
 		.script = "button",
 		id = id,
-		class = class,
 		name = name, 
 		props = props,
 		callback = callback,
+		color = color,
+		size = match.arg(size),
 		content
 	)
 }

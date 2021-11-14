@@ -1,7 +1,8 @@
 common_dep <- function(){
 	script <- c(
 		"lit.bundle.js",
-		"runtime.bundle.js"
+		"runtime.bundle.js",
+		"bs5.bundle.js"
 	)
 	htmlDependency(
 		"litter",

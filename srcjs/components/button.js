@@ -1,21 +1,18 @@
-import { html, css, LitElement } from 'lit';
+import { html, LitElement } from 'lit';
+import { classMap } from 'lit/directives/class-map.js';
+import { bs5 } from '../css/bs5';
 import 'Shiny';
 import 'jQuery';
 
 export class ActionButton extends LitElement {
-	static get styles() {
-		return css`button{
-				background-color: black;
-				color: white;
-			}`;
-	}
+	static styles = [bs5]
 
 	static properties = {
-		class: {type: String},
+		color: {type: String},
 		count: {type: Number},
 		name: {type: String},
 		id: {type: String},
-		callback: {type: String},
+		size: {type: String},
 		props: {}
 	}
 
@@ -24,7 +21,8 @@ export class ActionButton extends LitElement {
 		this.count = 0;
 		this.props = {};
 		this.id = null;
-		this.class = null;
+		this.color = null;
+		this.size = ""
 	}
 
 	_increment(e) {
@@ -55,9 +53,18 @@ export class ActionButton extends LitElement {
 	}
 
 	render() {
+		let size = '';
+		switch(this.size){
+			case 'small':
+				size = 'btn-sm';
+				break;
+			case 'large':
+				size = 'btn-lg';
+				break;
+		}
 		return html`<button 
 			@click="${this._increment}" 
-			class='${this.class}' 
+			class='btn btn-${this.color} ${size}' 
 			name='${this.name}'
 			id='${this.id}'
 			props='${this.props}'>

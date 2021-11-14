@@ -1,7 +1,7 @@
 {
   "button": {
     "import": "./srcjs/components/button.js",
-    "dependOn": "lit"
+    "dependOn": ["lit", "bs5"]
   },
   "text": {
     "import": "./srcjs/components/text.js",
@@ -11,5 +11,6 @@
     "import": "./srcjs/components/select.js",
     "dependOn": "lit"
   },
-  "lit": "lit"
+  "lit": "lit",
+  "bs5": "./srcjs/css/bs5"
 }
