@@ -1,26 +1,31 @@
+common_dep <- function(){
+	script <- c(
+		"lit.bundle.js",
+		"runtime.bundle.js"
+	)
+	htmlDependency(
+		"litter",
+		version = utils::packageVersion("litter"),
+		src = "assets",
+		package = "litter",
+		script = script
+	)
+}
+
 #' Dependencies
 #' 
 #' @importFrom htmltools htmlDependency
 #' 
 #' @keywords internal
 dep <- function(script){
-	script <- sprintf("%s.bundle.js", script)
-
-	# add common
-	script <- c(
-		"lit.bundle.js",
-		"runtime.bundle.js",
-		script
-	)
-
-	script <- paste0("assets/", script)
+	script_path <- sprintf("%s.bundle.js", script)
 
 	htmlDependency(
-		"litter",
+		script,
 		version = utils::packageVersion("litter"),
-		src = "",
+		src = "assets",
 		package = "litter",
-		script = script
+		script = script_path
 	)
 }
 
@@ -36,6 +41,9 @@ dep <- function(script){
 attach_dep <- function(tag, script) {
 	attachDependencies(
 		tag,
-		dep(script)
+		list(
+			common_dep(),
+			dep(script)
+		)
 	)
 }

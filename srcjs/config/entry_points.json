@@ -3,5 +3,9 @@
     "import": "./srcjs/components/button.js",
     "dependOn": "lit"
   },
+  "text": {
+    "import": "./srcjs/components/text.js",
+    "dependOn": "lit"
+  },
   "lit": "lit"
 }

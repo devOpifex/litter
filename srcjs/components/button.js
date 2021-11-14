@@ -34,7 +34,7 @@ export class ActionButton extends LitElement {
 			this.name + ':litter.parse', 
 			{
 				props: this.props, 
-				count: this.count,
+				value: this.count,
 				id: this.id
 			},
 			{
