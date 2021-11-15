@@ -1,9 +1,9 @@
-import { html, LitElement } from 'lit';
+import { html, css, LitElement } from 'lit';
 import { bs5 } from '../css/bs5';
 import 'Shiny';
 import 'jQuery';
 
-export class Text extends LitElement {
+export class TextArea extends LitElement {
 	static styles = [bs5]
 
 	static properties = {
@@ -28,7 +28,7 @@ export class Text extends LitElement {
 	}
 
 	firstUpdated(){
-		this._input = this.shadowRoot.querySelector('input');
+		this._input = this.shadowRoot.querySelector('textarea');
 	}
 
 	_sendValue(event) {
@@ -51,25 +51,10 @@ export class Text extends LitElement {
 			);
 			return;
 		}
-
-		if(event.keyCode != 13)
-			return;
-
-		window.Shiny.setInputValue(
-			this.name + ':litter.parse', 
-			{
-				props: this.props, 
-				value: this.value,
-				id: this.id
-			},
-			{
-				priority: 'event'
-			}
-		);
 	}
 	
 	render() {
-		return html`<input
+		return html`<textarea
 			@keyup='${this._sendValue}'
 			type='text'
 			class='form-control' 
@@ -77,16 +62,8 @@ export class Text extends LitElement {
 			id='${this.id}'
 			props='${this.props}'
 			placeholder='${this.placeholder}'
-			.value='${this.value}'>`;
+			.value='${this.value}'></textarea>`;
 	}
 }
 
-window.customElements.define('litter-text', Text);
-
-window.Shiny.addCustomMessageHandler('litter-text-input', (msg) => {
-	if(msg.props.length > 0)
-		$(msg.selector).attr('props', JSON.stringify(msg.props));
-
-	if(msg.value)
-		$(msg.selector).attr('value', msg.value);
-});
+window.customElements.define('litter-textarea', TextArea);

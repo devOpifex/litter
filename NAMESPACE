@@ -3,6 +3,7 @@
 export(litActionButton)
 export(litRangeInput)
 export(litSelectInput)
+export(litTextAreaInput)
 export(litTextInput)
 export(lit_action_button_update)
 export(lit_default_color)

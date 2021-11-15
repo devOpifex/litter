@@ -7,6 +7,10 @@
     "import": "./srcjs/components/text.js",
     "dependOn": ["lit", "bs5"]
   },
+  "textarea": {
+    "import": "./srcjs/components/textarea.js",
+    "dependOn": ["lit", "bs5"]
+  },
   "select": {
     "import": "./srcjs/components/select.js",
     "dependOn": ["lit", "bs5"]
