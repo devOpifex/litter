@@ -40,7 +40,7 @@ litTextAreaInput <- function(
 #' @param selector A selector for the text inputs to update.
 #' @param ... Passed to `props`.
 #' @param value Value of the text input.
-lit_text_input_update <- function(
+lit_text_area_input_update <- function(
 	session,
 	selector,
 	...,
@@ -53,7 +53,7 @@ lit_text_input_update <- function(
 	)
 	send_message(
 		session,
-		"litter-text-input",
+		"litter-textarea-input",
 		msg
 	)	
 }

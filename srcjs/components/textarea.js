@@ -67,3 +67,11 @@ export class TextArea extends LitElement {
 }
 
 window.customElements.define('litter-textarea', TextArea);
+
+window.Shiny.addCustomMessageHandler('litter-textarea-input', (msg) => {
+	if(msg.props.length > 0)
+		$(msg.selector).attr('props', JSON.stringify(msg.props));
+
+	if(msg.value)
+		$(msg.selector).attr('value', msg.value);
+});
