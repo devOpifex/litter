@@ -1,4 +1,4 @@
-import { html, css, LitElement } from 'lit';
+import { html, LitElement } from 'lit';
 import { bs5 } from '../css/bs5';
 import 'Shiny';
 import 'jQuery';

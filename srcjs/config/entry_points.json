@@ -11,6 +11,10 @@
     "import": "./srcjs/components/select.js",
     "dependOn": ["lit", "bs5"]
   },
+  "range": {
+    "import": "./srcjs/components/range.js",
+    "dependOn": ["lit", "bs5"]
+  },
   "lit": "lit",
   "bs5": "./srcjs/css/bs5"
 }
