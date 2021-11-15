@@ -1,19 +1,12 @@
 import { html, css, LitElement } from 'lit';
-import { repeat } from 'lit/directives/repeat.js';
+import { bs5 } from '../css/bs5';
 import 'Shiny';
 import 'jQuery';
 
 export class Select extends LitElement {
-	static get styles() {
-		return css`input{
-				background-color: white;
-				color: black;
-			}`;
-	}
+	static styles = [bs5]
 
 	static properties = {
-		class: {type: String},
-		value: {type: String},
 		name: {type: String},
 		id: {type: String},
 		props: {}
@@ -21,19 +14,16 @@ export class Select extends LitElement {
 
 	constructor() {
 		super();
-		this.value = '';
 		this.props = {};
 		this.id = null;
-		this.class = null;
 	}
 	
 	render() {
 		return html`<select
-			class='${this.class}' 
 			name='${this.name}'
 			id='${this.id}'
 			props='${this.props}'
-			.value='${this.value}'>
+			class='form-select'>
 			<slot></slot>
 		</select>`;
 	}

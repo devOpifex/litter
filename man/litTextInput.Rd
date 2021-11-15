@@ -10,7 +10,6 @@ litTextInput(
   placeholder = "",
   ...,
   id = NULL,
-  class = NULL,
   return = c("enter", "instant", "never")
 )
 }
@@ -24,8 +23,6 @@ litTextInput(
 \item{...}{Passed to props.}
 
 \item{id}{Id of the input.}
-
-\item{class}{Class of the button.}
 
 \item{return}{How to return the value to the shiny server
 Either \code{instant} (not recommended), \code{none} or \code{enter}, the

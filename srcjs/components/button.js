@@ -1,5 +1,4 @@
 import { html, LitElement } from 'lit';
-import { classMap } from 'lit/directives/class-map.js';
 import { bs5 } from '../css/bs5';
 import 'Shiny';
 import 'jQuery';
@@ -48,8 +47,7 @@ export class ActionButton extends LitElement {
 	}
 
 	get _slottedChildren() {
-		const slot = this.shadowRoot.querySelector('slot');
-		return slot;
+		return this.shadowRoot.querySelector('slot');
 	}
 
 	render() {

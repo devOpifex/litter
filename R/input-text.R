@@ -4,7 +4,6 @@
 #' 
 #' @param name Name of the input.
 #' @param value Value of the input.
-#' @param class Class of the button.
 #' @param placeholder Label of the button.
 #' @param id Id of the input.
 #' @param return How to return the value to the shiny server
@@ -19,7 +18,6 @@ litTextInput <- function(
 	placeholder = "",
 	...,
 	id = NULL,
-	class = NULL,
 	return = c("enter", "instant", "never")
 ) {
 	props <- serialise2(...)
@@ -27,7 +25,6 @@ litTextInput <- function(
 		"litter-text", 
 		.script = "text",
 		id = id,
-		class = class,
 		name = name, 
 		value = value,
 		props = props,

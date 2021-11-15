@@ -6,7 +6,6 @@
 #' @param options List of options (`name` & `value`).
 #' @param id Id of the input.
 #' @param ... Passed to props.
-#' @param class Class of the button.
 #' 
 #' @importFrom htmltools tags
 #' 
@@ -15,8 +14,7 @@ litSelectInput <- function(
 	name,
 	options = list(),
 	...,
-	id = NULL,
-	class = NULL
+	id = NULL
 ) {
 	props <- serialise2(...)
 
@@ -24,7 +22,6 @@ litSelectInput <- function(
 		"litter-select", 
 		.script = "select",
 		id = id,
-		class = class,
 		name = name, 
 		props = props,
 		lapply(options, function(opt){

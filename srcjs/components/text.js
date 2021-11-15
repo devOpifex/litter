@@ -1,14 +1,10 @@
 import { html, css, LitElement } from 'lit';
+import { bs5 } from '../css/bs5';
 import 'Shiny';
 import 'jQuery';
 
 export class Text extends LitElement {
-	static get styles() {
-		return css`input{
-				background-color: white;
-				color: black;
-			}`;
-	}
+	static styles = [bs5]
 
 	static properties = {
 		class: {type: String},
@@ -76,7 +72,7 @@ export class Text extends LitElement {
 		return html`<input
 			@keyup='${this._sendValue}'
 			type='text'
-			class='${this.class}' 
+			class='form-control' 
 			name='${this.name}'
 			id='${this.id}'
 			props='${this.props}'

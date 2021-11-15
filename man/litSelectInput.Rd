@@ -4,7 +4,7 @@
 \alias{litSelectInput}
 \title{Lit Select Input}
 \usage{
-litSelectInput(name, options = list(), ..., id = NULL, class = NULL)
+litSelectInput(name, options = list(), ..., id = NULL)
 }
 \arguments{
 \item{name}{Name of the input.}
@@ -14,8 +14,6 @@ litSelectInput(name, options = list(), ..., id = NULL, class = NULL)
 \item{...}{Passed to props.}
 
 \item{id}{Id of the input.}
-
-\item{class}{Class of the button.}
 }
 \description{
 Create a select input.
