@@ -1,11 +1,14 @@
 <div align="center">
 <!-- badges: start -->
 <!-- badges: end -->
-</div>
 
 # litter
 
 [Lit](https://lit.dev) components for shiny, with a twist.
+
+</div>
+
+:warning: work in progress
 
 ## Installation
 
