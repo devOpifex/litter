@@ -48,3 +48,4 @@ server <- function(input, output, session){
 shinyApp(ui, server)
 ```
 
+This makes it easier to work with generated inputs.
