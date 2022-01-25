@@ -8,7 +8,7 @@
 
 </div>
 
-:warning: this is an experiment out here for feedback
+:warning: this is an experiment
 
 ## Rationale
 
@@ -42,7 +42,8 @@ It seems promising but there are questions on the implementation:
 it currently uses lit for convenience but requires 
 re-programming all inputs that shiny currently offers.
 
-__This is public for feedback__
+__This is public for feedback__, please open an issue with
+any of your thoughts, whatever they may be.
 
 ## Installation
 
