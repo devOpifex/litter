@@ -14,11 +14,11 @@
 
 As much as we love the shiny web framework, one great limitation
 is how inputs are processed. Inputs are set given an `inputId` 
-which directly translated to `id` in the generated HTML.
+which directly translates to an `id` in the generated HTML.
 
 This means inputs can only be created individually, one function
 call creates a single input, it's difficult to dynamically generate
-inputs.
+multiple inputs given their IDs must be unique.
 
 Also, because of the latter, one can only `observe` individual
 inputs as opposed to multiple ones. Of course, one could wrap
@@ -26,15 +26,15 @@ multiple inputs in a `reactive` and then observe changes on said
 `reactive`, but that does not work well (if at all) for dynamically
 generated inputs.
 
-This project takes inspiration from vanilla JavaScript one can
+This project takes inspiration from vanilla JavaScript where one can
 observe on any valid selector such as a `.class`
 (as opposed to shiny which can only observe on `#id`), this means
 one can have a single `observe` for multiple inputs.
 
 This project implements something similar for shiny by allowing
 users to create inputs that, instead of `inputId`, take
-and `inputClass` argument which directly passed to the HTML
-`class` attribute. This makes it possible to sensibly use
+and `inputClass` argument which is directly passed to the HTML
+`class` attribute. This makes it is possible to sensibly use
 dynamically generated inputs in R as well as open the door
 to many other opportunities.
 
