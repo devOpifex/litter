@@ -8,7 +8,7 @@
 
 </div>
 
-:warning: this is an experimental work in progress.
+:warning: this is an experiment out here for feedback
 
 ## Installation
 
