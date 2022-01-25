@@ -5,4 +5,6 @@ handler_parse <- function(data, ...){
 
 # This will error
 # register with shiny
-shiny::registerInputHandler("litter.parse", handler_parse, force = TRUE)
+.onLoad <- function(...) {
+	shiny::registerInputHandler("litter.parse", handler_parse, force = TRUE)
+}
