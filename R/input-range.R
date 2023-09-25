@@ -33,8 +33,8 @@ litRangeInput <- function(
 	name,
 	...,
 	id = NULL,
-	min = NULL,
-	max = NULL,
+	min = 0L,
+	max = 10L,
 	step = NULL,
 	value = NULL,
   class = NULL
