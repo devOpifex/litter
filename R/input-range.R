@@ -8,6 +8,7 @@
 #' @param min,max,value Minimum, maximum, and initial value
 #' of the range.
 #' @param step Incremental steps the range must take.
+#' @param class Any additional classes.
 #' 
 #' @examples 
 #' library(shiny)
@@ -35,19 +36,20 @@ litRangeInput <- function(
 	min = NULL,
 	max = NULL,
 	step = NULL,
-	value = NULL
+	value = NULL,
+  class = NULL
 ) {
-	props <- serialise2(...)
+	meta <- serialise2(...)
 
 	tag2(
 		"litter-range", 
-		.script = "range",
 		id = id,
 		name = name,
 		min = min,
 		max = max,
 		step = step,
 		value = value,
-		props = props
+    meta = meta,
+    class = class
 	)
 }

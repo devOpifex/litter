@@ -9,9 +9,8 @@ litActionButton(
   content = "Click me",
   ...,
   id = NULL,
-  callback = NULL,
-  color = lit_default_color(),
-  size = c("standard", "small", "large")
+  class = NULL,
+  value = NULL
 )
 }
 \arguments{
@@ -24,14 +23,9 @@ or valid \code{shiny::tags}.}
 
 \item{id}{Id of the input.}
 
-\item{callback}{Callback function to run on click
-if \code{NULL} then the value is sent to the server.
-Otherwise a JavaScript callback function that accepts
-the instance of the button class (e.g.: \code{this}).}
+\item{class}{Any additional classes.}
 
-\item{color}{Color of button, e.g.: \code{outline-primary}.}
-
-\item{size}{Size of the button.}
+\item{value}{Value of the input.}
 }
 \description{
 Create an action button.

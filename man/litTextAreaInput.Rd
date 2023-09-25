@@ -10,7 +10,7 @@ litTextAreaInput(
   placeholder = "",
   ...,
   id = NULL,
-  return = c("instant", "never")
+  class = NULL
 )
 }
 \arguments{
@@ -24,8 +24,7 @@ litTextAreaInput(
 
 \item{id}{Id of the input.}
 
-\item{return}{How to return the value to the shiny server
-Either \code{instant}, or \code{none}.}
+\item{class}{Any additional classes.}
 }
 \description{
 Create a text area input.

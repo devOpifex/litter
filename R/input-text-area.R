@@ -6,9 +6,8 @@
 #' @param value Value of the input.
 #' @param placeholder Label of the button.
 #' @param id Id of the input.
-#' @param return How to return the value to the shiny server
-#' Either `instant`, or `none`.
 #' @param ... Passed to props.
+#' @param class Any additional classes.
 #' 
 #' @export 
 litTextAreaInput <- function(
@@ -17,18 +16,17 @@ litTextAreaInput <- function(
 	placeholder = "",
 	...,
 	id = NULL,
-	return = c("instant", "never")
+  class = NULL
 ) {
-	props <- serialise2(...)
+	meta <- serialise2(...)
 	tag2(
 		"litter-textarea", 
-		.script = "textarea",
 		id = id,
 		name = name, 
 		value = value,
-		props = props,
+		meta = meta,
 		placeholder = placeholder,
-		return = match.arg(return)
+    class = class
 	)
 }
 

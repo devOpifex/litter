@@ -1,11 +1,8 @@
-"use strict";(self.webpackChunklitter=self.webpackChunklitter||[]).push([[90],{372:(t,e,s)=>{var i=s(897),n=s(331);s(235),s(311);class p extends i.oi{static styles=[n.Z];static properties={name:{type:String},id:{type:String},min:{type:String},max:{type:String},step:{type:String},value:{type:String},props:{}};constructor(){super(),this.props={},this.id=null,this.min=null,this.max=null,this.step=null,this.value=null}firstUpdated(){this._input=this.shadowRoot.querySelector("input")}_sendValue(){this.value=this._input.value,window.Shiny.setInputValue(this.name+":litter.parse",{props:this.props,value:parseInt(this.value),id:this.id},{priority:"event"})}render(){return i.dy`<input
-			@input='${this._sendValue}'
+"use strict";(self.webpackChunklitter=self.webpackChunklitter||[]).push([[90],{372:(_,e,t)=>{var i=t(897),s=(t(235),t(311),t(193));class r extends s.X{static properties={value:{type:Number}};constructor(){super(),this.value=0}firstUpdated(){this._input=this.shadowRoot.querySelector("input")}_change(){this.value=this._input.value,this._sendThrottle()}render(){return i.dy`<input
+			@input='${this._change}'
 			type='range'
-			name='${this.name}'
-			id='${this.id}'
 			min='${this.min}'
 			max='${this.max}'
 			step='${this.step}'
-			.value='${this.value}'
-			props='${this.props}'
-			class='form-range'>`}}window.customElements.define("litter-range",p)},235:t=>{t.exports=Shiny},311:t=>{t.exports=jQuery}},t=>{t.O(0,[560,565],(()=>(372,t(t.s=372)))),t.O()}]);
+      value='${this.value}'
+			class='form-range ${this.class}'>`}}window.customElements.define("litter-range",r)},193:(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{X:()=>LitInput});var lit__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(897),_css_bs5__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(331),Shiny__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(235),Shiny__WEBPACK_IMPORTED_MODULE_2___default=__webpack_require__.n(Shiny__WEBPACK_IMPORTED_MODULE_2__),jQuery__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(311),jQuery__WEBPACK_IMPORTED_MODULE_3___default=__webpack_require__.n(jQuery__WEBPACK_IMPORTED_MODULE_3__);class LitInput extends lit__WEBPACK_IMPORTED_MODULE_0__.oi{static styles=[_css_bs5__WEBPACK_IMPORTED_MODULE_1__.Z];static properties={value:{type:String},name:{type:String},class:{type:String},priority:{type:String},id:{type:String},meta:{}};constructor(){super(),this.priority="deferred",this.class="",this.meta={},this.id=null,this.timeout=null}_send(){if(this.callback){let cb=eval(this.callback);return void cb(this)}let data={meta:this.meta,value:this.value};this.id&&(data.id=this.id),Shiny.setInputValue(this.name+":litter.parse",data,{priority:this.priority})}_sendThrottle(){clearTimeout(this.timeout),this.timeout=setTimeout((()=>{this._send()}),250)}}},235:_=>{_.exports=Shiny},311:_=>{_.exports=jQuery}},_=>{_.O(0,[560,565],(()=>(372,_(_.s=372)))),_.O()}]);

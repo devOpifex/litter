@@ -8,6 +8,8 @@
 #' @importFrom htmltools tag
 #' 
 #' @keywords internal
-tag2 <- function(.name, ..., .script){
+tag2 <- function(.name, ..., .script = NULL){
+  if(is.null(.script))
+    .script <- gsub(".*-", "", .name)
 	attach_dep(tag(.name, list(...)), script = .script)
 }

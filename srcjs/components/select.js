@@ -1,32 +1,44 @@
-import { html, LitElement } from 'lit';
-import { bs5 } from '../css/bs5';
-import 'Shiny';
-import 'jQuery';
+import { html, LitElement } from "lit";
+import "Shiny";
+import "jQuery";
+import { LitInput } from "../input.js";
 
-export class Select extends LitElement {
-	static styles = [bs5]
+export class Select extends LitInput {
+  static properties = {
+    options: { type: Array },
+  };
 
-	static properties = {
-		name: {type: String},
-		id: {type: String},
-		props: {}
-	}
+  constructor() {
+    super();
+    this.options = [];
+  }
 
-	constructor() {
-		super();
-		this.props = {};
-		this.id = null;
-	}
-	
-	render() {
-		return html`<select
-			name='${this.name}'
-			id='${this.id}'
-			props='${this.props}'
-			class='form-select'>
-			<slot></slot>
+  firstUpdated() {
+    if (!this.value) {
+      return;
+    }
+    this.shadowRoot.querySelector("select").value = this.value;
+  }
+
+  _setValue() {
+    this.value = this.renderRoot.querySelector("select").value;
+    this._send();
+  }
+
+  _change() {
+    this._setValue();
+    this._send();
+  }
+
+  render() {
+    const opts = this.options.map((el) =>
+      html`<option value="${el.value}">${el.label}</option>`
+    );
+    return html`<select
+			class='form-select ${this.class}' @change=${this._change}>
+      ${opts}
 		</select>`;
-	}
+  }
 }
 
-window.customElements.define('litter-select', Select);
+window.customElements.define("litter-select", Select);

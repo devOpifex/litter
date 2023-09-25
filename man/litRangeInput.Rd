@@ -11,7 +11,8 @@ litRangeInput(
   min = NULL,
   max = NULL,
   step = NULL,
-  value = NULL
+  value = NULL,
+  class = NULL
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ litRangeInput(
 of the range.}
 
 \item{step}{Incremental steps the range must take.}
+
+\item{class}{Any additional classes.}
 }
 \description{
 Create a range input.

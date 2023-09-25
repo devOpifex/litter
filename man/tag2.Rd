@@ -4,7 +4,7 @@
 \alias{tag2}
 \title{Custom Tag}
 \usage{
-tag2(.name, ..., .script)
+tag2(.name, ..., .script = NULL)
 }
 \arguments{
 \item{.name}{Name of the tag.}

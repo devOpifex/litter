@@ -6,10 +6,8 @@
 #' @param value Value of the input.
 #' @param placeholder Label of the button.
 #' @param id Id of the input.
-#' @param return How to return the value to the shiny server
-#' Either `instant` (not recommended), `none` or `enter`, the 
-#' latter sends it on enter.
 #' @param ... Passed to props.
+#' @param class Any additional classes.
 #' 
 #' @export 
 litTextInput <- function(
@@ -18,43 +16,17 @@ litTextInput <- function(
 	placeholder = "",
 	...,
 	id = NULL,
-	return = c("enter", "instant", "never")
+  class = NULL
 ) {
-	props <- serialise2(...)
+	meta <- serialise2(...)
 	tag2(
 		"litter-text", 
-		.script = "text",
 		id = id,
 		name = name, 
 		value = value,
-		props = props,
+		meta = meta,
 		placeholder = placeholder,
-		return = match.arg(return)
+    class = class
 	)
 }
 
-#' Update Text Input
-#' 
-#' Update text inputs.
-#' 
-#' @param session A valid shiny session.
-#' @param selector A selector for the text inputs to update.
-#' @param ... Passed to `props`.
-#' @param value Value of the text input.
-lit_text_input_update <- function(
-	session,
-	selector,
-	...,
-	value = NULL
-){
-	msg <- list(
-		selector = selector,
-		value = value,
-		props = list(...)
-	)
-	send_message(
-		session,
-		"litter-text-input",
-		msg
-	)	
-}

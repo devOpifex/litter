@@ -4,14 +4,7 @@
 \alias{litTextInput}
 \title{Lit Text Input}
 \usage{
-litTextInput(
-  name,
-  value = "",
-  placeholder = "",
-  ...,
-  id = NULL,
-  return = c("enter", "instant", "never")
-)
+litTextInput(name, value = "", placeholder = "", ..., id = NULL, class = NULL)
 }
 \arguments{
 \item{name}{Name of the input.}
@@ -24,9 +17,7 @@ litTextInput(
 
 \item{id}{Id of the input.}
 
-\item{return}{How to return the value to the shiny server
-Either \code{instant} (not recommended), \code{none} or \code{enter}, the
-latter sends it on enter.}
+\item{class}{Any additional classes.}
 }
 \description{
 Create a text input.
