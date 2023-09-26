@@ -6,6 +6,9 @@ import { LitInput } from "../input.js";
 export class Text extends LitInput {
   _change() {
     this.value = this.shadowRoot.querySelector("input").value;
+  }
+
+  updated() {
     this._sendThrottle();
   }
 

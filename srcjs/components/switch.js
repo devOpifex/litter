@@ -16,9 +16,12 @@ export class Switch extends LitInput {
     this._sendOnConnect();
   }
 
+  updated() {
+    this._send();
+  }
+
   _change() {
     this.value = this.shadowRoot.querySelector("input").checked;
-    this._sendThrottle();
   }
 
   render() {

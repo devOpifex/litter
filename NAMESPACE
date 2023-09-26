@@ -2,6 +2,7 @@
 
 export(litActionButton)
 export(litCheckboxesInput)
+export(litColorInput)
 export(litPasswordInput)
 export(litRadioInput)
 export(litRangeInput)

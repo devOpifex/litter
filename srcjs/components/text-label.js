@@ -10,7 +10,10 @@ export class TextLabel extends LitInput {
 
   _change() {
     this.value = this.shadowRoot.querySelector("input").value;
-    this._sendThrottle();
+  }
+
+  updated() {
+    this._send();
   }
 
   render() {

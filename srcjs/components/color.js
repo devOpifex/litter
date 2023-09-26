@@ -3,23 +3,23 @@ import "Shiny";
 import "jQuery";
 import { LitInput } from "../input.js";
 
-export class Password extends LitInput {
+export class Color extends LitInput {
   _change() {
     this.value = this.shadowRoot.querySelector("input").value;
   }
 
   updated() {
-    this._sendThrottle();
+    this._send();
   }
 
   render() {
     return html`<input
       class = 'form-control ${this.class}'
       value = '${this.value}'
-      type = 'password'
-			@keyup='${this._change}'
+      type = 'color'
+			@change='${this._change}'
 			placeholder='${this.placeholder}'>`;
   }
 }
 
-customElements.define("litter-password", Password);
+customElements.define("litter-color", Color);

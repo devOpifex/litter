@@ -1,4 +1,4 @@
-(self.webpackChunklitter=self.webpackChunklitter||[]).push([[469],{454:(_,e,t)=>{"use strict";var i=t(392),s=(t(235),t(311),t(193));class r extends s.X{static properties={label:{type:String}};_change(){this.value=this.shadowRoot.querySelector("input").value,this._sendThrottle()}render(){return i.dy`
+(self.webpackChunklitter=self.webpackChunklitter||[]).push([[469],{454:(_,e,t)=>{"use strict";var i=t(392),s=(t(235),t(311),t(193));class r extends s.X{static properties={label:{type:String}};_change(){this.value=this.shadowRoot.querySelector("input").value}updated(){this._send()}render(){return i.dy`
     <div class="form-floating ${this.class}">
       <input
         class = 'form-control'

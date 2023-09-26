@@ -1,4 +1,4 @@
-(self.webpackChunklitter=self.webpackChunklitter||[]).push([[547],{650:(_,e,t)=>{"use strict";var s=t(392),i=(t(235),t(311),t(193));class r extends i.X{_change(){this.value=this.shadowRoot.querySelector("input").value,this._sendThrottle()}render(){return s.dy`<input
+(self.webpackChunklitter=self.webpackChunklitter||[]).push([[547],{650:(_,e,t)=>{"use strict";var s=t(392),i=(t(235),t(311),t(193));class r extends i.X{_change(){this.value=this.shadowRoot.querySelector("input").value}updated(){this._sendThrottle()}render(){return s.dy`<input
       class = 'form-control ${this.class}'
       value = '${this.value}'
       type = 'text'

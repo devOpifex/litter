@@ -1,4 +1,4 @@
-(self.webpackChunklitter=self.webpackChunklitter||[]).push([[456],{446:(_,e,t)=>{"use strict";var s=t(392),i=(t(235),t(311),t(193));class r extends i.X{static properties={label:{type:String},value:{type:Boolean}};firstUpdated(){this.value&&(this.shadowRoot.querySelector("input").checked=!0),this._sendOnConnect()}_change(){this.value=this.shadowRoot.querySelector("input").checked,this._sendThrottle()}render(){return s.dy`<div class="form-check form-switch">
+(self.webpackChunklitter=self.webpackChunklitter||[]).push([[456],{446:(_,e,t)=>{"use strict";var s=t(392),i=(t(235),t(311),t(193));class r extends i.X{static properties={label:{type:String},value:{type:Boolean}};firstUpdated(){this.value&&(this.shadowRoot.querySelector("input").checked=!0),this._sendOnConnect()}updated(){this._send()}_change(){this.value=this.shadowRoot.querySelector("input").checked}render(){return s.dy`<div class="form-check form-switch">
       <input
         class="form-check-input ${this.class}" 
         type="checkbox" 
