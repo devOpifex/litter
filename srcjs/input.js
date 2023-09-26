@@ -2,6 +2,7 @@ import { html, LitElement } from "lit";
 import { bs5 } from "./css/bs5";
 import "Shiny";
 import "jQuery";
+import "./update.js";
 
 export class LitInput extends LitElement {
   static styles = [bs5];
@@ -24,6 +25,10 @@ export class LitInput extends LitElement {
     this.timeout = null;
   }
 
+  firstUpdated() {
+    this._sendOnConnect();
+  }
+
   _send() {
     if (this.callback) {
       let cb = eval(this.callback);
@@ -40,13 +45,17 @@ export class LitInput extends LitElement {
       data.id = this.id;
     }
 
-    Shiny.setInputValue(
-      this.name + ":litter.parse",
-      data,
-      {
-        priority: this.priority,
-      },
-    );
+    try {
+      Shiny.setInputValue(
+        this.name + ":litter.parse",
+        data,
+        {
+          priority: this.priority,
+        },
+      );
+    } catch (error) {
+      console.error("shiny not connected");
+    }
   }
 
   _sendThrottle() {
@@ -55,5 +64,11 @@ export class LitInput extends LitElement {
     this.timeout = setTimeout(() => {
       this._send();
     }, 250);
+  }
+
+  _sendOnConnect() {
+    $(document).on("shiny:connected", (e) => {
+      this._send();
+    });
   }
 }

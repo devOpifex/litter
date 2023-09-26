@@ -9,3 +9,6 @@ make_options <- function(choices) {
   })
 }
 
+get_first_option <- function(choices) {
+  return(choices[1])
+}

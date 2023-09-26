@@ -22,6 +22,9 @@ litSelectInput <- function(
 ) {
 	meta <- serialise2(...)
 
+  if(is.null(value))
+    value <- get_first_option(choices)
+
 	tag2(
 		"litter-select", 
 		id = id,

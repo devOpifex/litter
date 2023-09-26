@@ -14,10 +14,13 @@ export class Select extends LitInput {
   }
 
   firstUpdated() {
-    if (!this.value) {
-      return;
-    }
     this.shadowRoot.querySelector("select").value = this.value;
+    this._sendOnConnect();
+  }
+
+  updated() {
+    this.shadowRoot.querySelector("select").value = this.value;
+    this._send();
   }
 
   _setValue() {
@@ -26,7 +29,6 @@ export class Select extends LitInput {
 
   _change() {
     this._setValue();
-    this._send();
   }
 
   render() {

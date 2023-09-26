@@ -4,12 +4,8 @@ import "jQuery";
 import { LitInput } from "../input.js";
 
 export class TextArea extends LitInput {
-  firstUpdated() {
-    this._input = this.shadowRoot.querySelector("textarea");
-  }
-
   _change() {
-    this.value = this._input.value;
+    this.value = this.shadowRoot.querySelector("textarea").value;
     this._sendThrottle();
   }
 

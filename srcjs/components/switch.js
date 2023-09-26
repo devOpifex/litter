@@ -10,16 +10,14 @@ export class Switch extends LitInput {
   };
 
   firstUpdated() {
-    this._input = this.shadowRoot.querySelector("input");
-
     if (this.value) {
-      this._input.checked = true;
+      this.shadowRoot.querySelector("input").checked = true;
     }
-    this.value = this._input.checked;
+    this._sendOnConnect();
   }
 
   _change() {
-    this.value = this._input.checked;
+    this.value = this.shadowRoot.querySelector("input").checked;
     this._sendThrottle();
   }
 

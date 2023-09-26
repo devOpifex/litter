@@ -30,28 +30,3 @@ litTextAreaInput <- function(
 	)
 }
 
-#' Update Text Input
-#' 
-#' Update text inputs.
-#' 
-#' @param session A valid shiny session.
-#' @param selector A selector for the text inputs to update.
-#' @param ... Passed to `props`.
-#' @param value Value of the text input.
-lit_text_area_input_update <- function(
-	session,
-	selector,
-	...,
-	value = NULL
-){
-	msg <- list(
-		selector = selector,
-		value = value,
-		props = list(...)
-	)
-	send_message(
-		session,
-		"litter-textarea-input",
-		msg
-	)	
-}

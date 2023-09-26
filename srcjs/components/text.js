@@ -4,12 +4,8 @@ import "jQuery";
 import { LitInput } from "../input.js";
 
 export class Text extends LitInput {
-  firstUpdated() {
-    this._input = this.shadowRoot.querySelector("input");
-  }
-
   _change() {
-    this.value = this._input.value;
+    this.value = this.shadowRoot.querySelector("input").value;
     this._sendThrottle();
   }
 

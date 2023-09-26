@@ -10,7 +10,6 @@ export class Range extends LitInput {
     min: { type: Number },
     max: { type: Number },
     step: { type: Number },
-    styles: {},
   };
 
   constructor() {
@@ -21,8 +20,22 @@ export class Range extends LitInput {
 
   firstUpdated() {
     this._input = this.shadowRoot.querySelector("input");
+    this._sendOnConnect();
+  }
+
+  willUpdate(props) {
+    if (!props.has("value")) {
+      return;
+    }
+
+    const value = props.get("value");
+    let output = this.shadowRoot.querySelector("output");
     let perc = ((this.value - this.min) * 100) / (this.max - this.min);
     this.styles = { left: `calc(${perc}% + (${8 - perc * 0.20}px))` };
+  }
+
+  updated() {
+    this._sendThrottle();
   }
 
   _change() {
@@ -30,7 +43,6 @@ export class Range extends LitInput {
     let output = this.shadowRoot.querySelector("output");
     let perc = ((this.value - this.min) * 100) / (this.max - this.min);
     this.styles = { left: `calc(${perc}% + (${8 - perc * 0.20}px))` };
-    this._sendThrottle();
   }
 
   render() {

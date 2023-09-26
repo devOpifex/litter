@@ -15,10 +15,11 @@ export class Checkboxes extends LitInput {
     this.value = [];
   }
 
-  firstUpdated() {
+  updated() {
     this.value.map((val) => {
       this.shadowRoot.querySelector(`input[value='${val}']`).checked = true;
     });
+    this._send();
   }
 
   _setValue() {
@@ -34,7 +35,6 @@ export class Checkboxes extends LitInput {
 
   _change() {
     this._setValue();
-    this._send();
   }
 
   render() {

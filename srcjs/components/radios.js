@@ -13,9 +13,10 @@ export class Radios extends LitInput {
     this.options = [];
   }
 
-  firstUpdated() {
+  updated() {
     this.shadowRoot.querySelector(`input[value='${this.value}']`).checked =
       true;
+    this._send();
   }
 
   _setValue() {
@@ -31,7 +32,6 @@ export class Radios extends LitInput {
 
   _change() {
     this._setValue();
-    this._send();
   }
 
   render() {
