@@ -1,6 +1,6 @@
-"use strict";(self.webpackChunklitter=self.webpackChunklitter||[]).push([[456],{446:(_,e,t)=>{var i=t(392),s=(t(235),t(311),t(193));class r extends s.X{static properties={label:{type:String},value:{type:Boolean}};firstUpdated(){this._input=this.shadowRoot.querySelector("input"),this.value&&(this._input.checked=!0)}_change(){this.value=this._input.checked,this._sendThrottle()}render(){return i.dy`<div class="form-check form-switch">
+"use strict";(self.webpackChunklitter=self.webpackChunklitter||[]).push([[456],{446:(_,e,t)=>{var i=t(392),s=(t(235),t(311),t(193));class r extends s.X{static properties={label:{type:String},value:{type:Boolean}};firstUpdated(){this._input=this.shadowRoot.querySelector("input"),this.value&&(this._input.checked=!0),this.value=this._input.checked}_change(){this.value=this._input.checked,this._sendThrottle()}render(){return i.dy`<div class="form-check form-switch">
       <input
-        class="form-check-input" 
+        class="form-check-input ${this.class}" 
         type="checkbox" 
         role="switch"
         @change='${this._change}'

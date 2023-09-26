@@ -22,7 +22,6 @@ export class Select extends LitInput {
 
   _setValue() {
     this.value = this.renderRoot.querySelector("select").value;
-    this._send();
   }
 
   _change() {

@@ -1,35 +1,36 @@
-#' Lit Select Input
+#' Lit Checkboxes Input
 #' 
-#' Create a select input.
+#' Create checboxes input.
 #' 
 #' @param name Name of the input.
 #' @param choices List of options.
 #' @param id Id of the input.
 #' @param ... Passed to props.
 #' @param class Any additional classes.
-#' @param value Value of the input.
+#' @param value `choices` that are checked.
 #' 
 #' @importFrom htmltools tags
 #' 
 #' @export 
-litSelectInput <- function(
+litCheckboxesInput <- function(
 	name,
 	choices = list(),
 	...,
 	id = NULL,
-  value = NULL,
+  value = list(),
   class = NULL
 ) {
 	meta <- serialise2(...)
 
 	tag2(
-		"litter-select", 
+		"litter-checkboxes", 
 		id = id,
 		name = name, 
 		meta = meta,
     value = value,
     class = class,
-    options = make_options(choices) |> serialise()
+    options = as.list(choices) |> serialise()
 	)
 }
+
 

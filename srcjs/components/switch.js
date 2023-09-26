@@ -15,6 +15,7 @@ export class Switch extends LitInput {
     if (this.value) {
       this._input.checked = true;
     }
+    this.value = this._input.checked;
   }
 
   _change() {
@@ -25,7 +26,7 @@ export class Switch extends LitInput {
   render() {
     return html`<div class="form-check form-switch">
       <input
-        class="form-check-input" 
+        class="form-check-input ${this.class}" 
         type="checkbox" 
         role="switch"
         @change='${this._change}'
