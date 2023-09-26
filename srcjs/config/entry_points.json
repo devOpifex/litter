@@ -19,6 +19,10 @@
     "import": "./srcjs/components/range.js",
     "dependOn": ["lit", "bs5"]
   },
+  "switch": {
+    "import": "./srcjs/components/switch.js",
+    "dependOn": ["lit", "bs5"]
+  },
   "lit": "lit",
   "bs5": "./srcjs/css/bs5"
 }

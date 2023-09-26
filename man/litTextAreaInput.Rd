@@ -18,7 +18,7 @@ litTextAreaInput(
 
 \item{value}{Value of the input.}
 
-\item{placeholder}{Label of the button.}
+\item{placeholder}{Placeholder text.}
 
 \item{...}{Passed to props.}
 

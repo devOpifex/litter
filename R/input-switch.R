@@ -1,32 +1,33 @@
-#' Lit Text Input
+#' Lit Switch Input
 #' 
-#' Create a text input.
+#' Create a switch input.
 #' 
 #' @param name Name of the input.
 #' @param value Value of the input.
-#' @param placeholder Placeholder text.
+#' @param label Label of the button.
 #' @param id Id of the input.
 #' @param ... Passed to props.
 #' @param class Any additional classes.
 #' 
 #' @export 
-litTextInput <- function(
+litSwitchInput <- function(
 	name,
-	value = "", 
-	placeholder = "",
+	value = TRUE, 
+	label = "",
 	...,
 	id = NULL,
   class = NULL
 ) {
 	meta <- serialise2(...)
 	tag2(
-		"litter-text", 
+		"litter-switch", 
 		id = id,
 		name = name, 
 		value = value,
 		meta = meta,
-		placeholder = placeholder,
+		label = label,
     class = class
 	)
 }
+
 

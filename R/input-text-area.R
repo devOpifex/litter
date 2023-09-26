@@ -4,7 +4,7 @@
 #' 
 #' @param name Name of the input.
 #' @param value Value of the input.
-#' @param placeholder Label of the button.
+#' @param placeholder Placeholder text.
 #' @param id Id of the input.
 #' @param ... Passed to props.
 #' @param class Any additional classes.
