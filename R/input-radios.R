@@ -1,6 +1,6 @@
-#' Lit Checkboxes Input
+#' Lit Radio Input
 #' 
-#' Create checkboxes input.
+#' Create radio input.
 #' 
 #' @param name Name of the input.
 #' @param choices List of options.
@@ -12,24 +12,28 @@
 #' @importFrom htmltools tags
 #' 
 #' @export 
-litCheckboxesInput <- function(
+litRadioInput <- function(
 	name,
 	choices = list(),
 	...,
 	id = NULL,
-  value = list(),
+  value = NULL,
   class = NULL
 ) {
 	meta <- serialise2(...)
 
+  if(is.null(value))
+    value <- choices[1]
+
 	tag2(
-		"litter-checkboxes", 
+		"litter-radios", 
 		id = id,
 		name = name, 
 		meta = meta,
-    value = as.list(value) |> serialise(),
+    value = value,
     class = class,
     options = as.list(choices) |> serialise()
 	)
 }
+
 

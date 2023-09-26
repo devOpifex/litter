@@ -40,4 +40,4 @@ export class Select extends LitInput {
   }
 }
 
-window.customElements.define("litter-select", Select);
+customElements.define("litter-select", Select);
