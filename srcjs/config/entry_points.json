@@ -43,6 +43,10 @@
     "import": "./srcjs/components/color.js",
     "dependOn": ["lit", "bs5"]
   },
+  "datalist": {
+    "import": "./srcjs/components/datalist.js",
+    "dependOn": ["lit", "bs5"]
+  },
   "lit": "lit",
   "bs5": "./srcjs/css/bs5"
 }
