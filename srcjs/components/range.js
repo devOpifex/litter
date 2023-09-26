@@ -35,9 +35,13 @@ export class Range extends LitInput {
 
   render() {
     return html`<div>
-      <span class="float-start">${this.min}</span>
-      <span class="float-end">${this.max}</span>
-      <output class="position-absolute" style=${
+      <span class="float-start" style=${
+      styleMap({ fontSize: .75 + `rem` })
+    }>${this.min}</span>
+      <span class="float-end" style=${
+      styleMap({ fontSize: .75 + `rem` })
+    }>${this.max}</span>
+      <output class="position-absolute rounded px-1 bg-primary text-white" style=${
       styleMap(this.styles)
     }>${this.value}</output>
     </div>

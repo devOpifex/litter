@@ -1,8 +1,8 @@
 /*! For license information please see range.bundle.js.LICENSE.txt */
 "use strict";(self.webpackChunklitter=self.webpackChunklitter||[]).push([[90],{431:(t,e,s)=>{var i=s(392),_=(s(235),s(311),s(193)),r=s(692);const a=(u=class extends class{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,e,s){this._$Ct=t,this._$AM=e,this._$Ci=s}_$AS(t,e){return this.update(t,e)}update(t,e){return this.render(...e)}}{constructor(t){var e;if(super(t),1!==t.type||"style"!==t.name||(null===(e=t.strings)||void 0===e?void 0:e.length)>2)throw Error("The `styleMap` directive must be used in the `style` attribute and must be the only part in the attribute.")}render(t){return Object.keys(t).reduce(((e,s)=>{const i=t[s];return null==i?e:e+`${s=s.replace(/(?:^(webkit|moz|ms|o)|)(?=[A-Z])/g,"-$&").toLowerCase()}:${i};`}),"")}update(t,[e]){const{style:s}=t.element;if(void 0===this.ut){this.ut=new Set;for(const t in e)this.ut.add(t);return this.render(e)}this.ut.forEach((t=>{null==e[t]&&(this.ut.delete(t),t.includes("-")?s.removeProperty(t):s[t]="")}));for(const t in e){const i=e[t];null!=i&&(this.ut.add(t),t.includes("-")?s.setProperty(t,i):s[t]=i)}return r.Jb}},(...t)=>({_$litDirective$:u,values:t}));var u;class n extends _.X{static properties={value:{type:Number},min:{type:Number},max:{type:Number},step:{type:Number},styles:{}};constructor(){super(),this.value=0,this.styles={left:"50%"}}firstUpdated(){this._input=this.shadowRoot.querySelector("input");let t=100*(this.value-this.min)/(this.max-this.min);this.styles={left:`calc(${t}% + (${8-.2*t}px))`}}_change(){this.value=this._input.value,this.shadowRoot.querySelector("output");let t=100*(this.value-this.min)/(this.max-this.min);this.styles={left:`calc(${t}% + (${8-.2*t}px))`},this._sendThrottle()}render(){return i.dy`<div>
-      <span class="float-start">${this.min}</span>
-      <span class="float-end">${this.max}</span>
-      <output class="position-absolute" style=${a(this.styles)}>${this.value}</output>
+      <span class="float-start" style=${a({fontSize:"0.75rem"})}>${this.min}</span>
+      <span class="float-end" style=${a({fontSize:"0.75rem"})}>${this.max}</span>
+      <output class="position-absolute rounded px-1 bg-primary text-white" style=${a(this.styles)}>${this.value}</output>
     </div>
       <input
         @input='${this._change}'
