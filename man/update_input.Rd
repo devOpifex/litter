@@ -2,7 +2,7 @@
 % Please edit documentation in R/update.R
 \name{update_input}
 \alias{update_input}
-\title{Update input}
+\title{Update inputs}
 \usage{
 update_input(
   ...,
@@ -24,7 +24,7 @@ update_input(
 \item{session}{A Shiny session.}
 }
 \description{
-Update an input
+Update inputs.
 }
 \details{
 Set either of \code{name}, \code{id}, or \code{selector}.

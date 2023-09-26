@@ -1,6 +1,6 @@
-#' Update input
+#' Update inputs
 #' 
-#' Update an input
+#' Update inputs.
 #' 
 #' @param name Name of the input.
 #' @param id Id of the input.

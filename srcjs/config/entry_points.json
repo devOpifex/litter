@@ -31,6 +31,10 @@
     "import": "./srcjs/components/radios.js",
     "dependOn": ["lit", "bs5"]
   },
+  "textlabel": {
+    "import": "./srcjs/components/text-label.js",
+    "dependOn": ["lit", "bs5"]
+  },
   "lit": "lit",
   "bs5": "./srcjs/css/bs5"
 }
