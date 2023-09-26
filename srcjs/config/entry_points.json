@@ -35,6 +35,10 @@
     "import": "./srcjs/components/text-label.js",
     "dependOn": ["lit", "bs5"]
   },
+  "password": {
+    "import": "./srcjs/components/password.js",
+    "dependOn": ["lit", "bs5"]
+  },
   "lit": "lit",
   "bs5": "./srcjs/css/bs5"
 }
