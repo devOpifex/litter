@@ -35,6 +35,7 @@ to many other opportunities.
 
 ## Limitations
 
+- Only works with bslib's Bootstrap 5.
 - These inputs are not captured by Shiny's bookmarking session
 - These inputs are not captured by [shinytest2](https://rstudio.github.io/shinytest2/)
 
@@ -58,6 +59,7 @@ library(shiny)
 library(litter)
 
 ui <- fluidPage(
+  theme = bslib::bs_theme(5L),
   litActionButton(
     name = "btn",
     "Button #1"
@@ -108,6 +110,7 @@ library(shiny)
 library(litter)
 
 ui <- fluidPage(
+  theme = bslib::bs_theme(5L),
   litActionButton(
     name = "btn",
     "Button #1",
@@ -128,4 +131,8 @@ server <- function(input, output, session){
 
 shinyApp(ui, server)
 ```
+
+## Styling
+
+All styling is taken from bslib's set theme.
 
