@@ -3,6 +3,8 @@
 \name{update_input}
 \alias{update_input}
 \alias{update_datalist_input}
+\alias{update_selectize_input}
+\alias{update_selector_input}
 \title{Update inputs}
 \usage{
 update_input(
@@ -15,6 +17,24 @@ update_input(
 
 update_datalist_input(
   choices,
+  ...,
+  name = NULL,
+  id = NULL,
+  selector = NULL,
+  session = shiny::getDefaultReactiveDomain()
+)
+
+update_selectize_input(
+  choices,
+  ...,
+  name = NULL,
+  id = NULL,
+  selector = NULL,
+  session = shiny::getDefaultReactiveDomain()
+)
+
+update_selector_input(
+  dataset,
   ...,
   name = NULL,
   id = NULL,
@@ -34,6 +54,8 @@ update_datalist_input(
 \item{session}{A Shiny session.}
 
 \item{choices}{Vector (optionally named) of options.}
+
+\item{dataset}{Dataset to update \code{\link[=litDatalistInput]{litDatalistInput()}}}
 }
 \description{
 Update inputs.

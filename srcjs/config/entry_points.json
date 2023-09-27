@@ -47,6 +47,14 @@
     "import": "./srcjs/components/datalist.js",
     "dependOn": ["lit", "bs5"]
   },
+  "selector": {
+    "import": "./srcjs/components/selector.js",
+    "dependOn": ["lit", "bs5"]
+  },
+  "selectize": {
+    "import": "./srcjs/components/selectize.js",
+    "dependOn": ["lit", "bs5"]
+  },
   "lit": "lit",
   "bs5": "./srcjs/css/bs5"
 }

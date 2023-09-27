@@ -24,8 +24,12 @@ datalist_endpoint <- function(data, req) {
   options <- options[grepl(query, options$value) | grepl(query, options$label), ]
 
   options |>
+    utils::head(100) |>
     http_response_json()
 }
+
+#' @importFrom shiny parseQueryString
+selectize_endpoint <- datalist_endpoint
 
 #' @importFrom shiny httpResponse
 http_response_json <- function(data, status_code = 200L) {

@@ -11,13 +11,23 @@ const select = (msg) => {
     return `#${id}`;
   }
 
-  return "";
+  return null;
 };
 
 Shiny.addCustomMessageHandler("litter-update-input", (msg) => {
   let target = select(msg);
 
+  if (!target) {
+    return;
+  }
+
   Object.keys(msg.props).forEach((key, index) => {
-    $(target).attr(key, msg.props[key]);
+    let value = msg.props[key];
+
+    if (typeof value == "object") {
+      value = JSON.stringify(value);
+    }
+
+    $(target).attr(key, value);
   });
 });

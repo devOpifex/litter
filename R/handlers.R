@@ -1,5 +1,5 @@
 handler_parse <- function(data, ...){
-	data$meta <- jsonlite::fromJSON(data$meta)
+	data$props <- jsonlite::fromJSON(data$props)
 	return(data)
 }
 
