@@ -107,16 +107,16 @@ library(shiny)
 library(litter)
 
 ui <- fluidPage(
-	litActionButton(
-		name = "btn",
-		"Button #1",
+  litActionButton(
+    name = "btn",
+    "Button #1",
     myProp = "A"
-	),
-	litActionButton(
-		name = "btn",
-		"Button #2",
+  ),
+  litActionButton(
+    name = "btn",
+    "Button #2",
     myProp = "B"
-	)
+  )
 )
 
 server <- function(input, output, session){
