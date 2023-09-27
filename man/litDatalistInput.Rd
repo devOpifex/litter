@@ -32,3 +32,9 @@ litDatalistInput(
 \description{
 Create a datalist input.
 }
+\details{
+Can be server-side rendered with \code{\link[=update_datalist_input]{update_datalist_input()}}.
+}
+\seealso{
+\code{\link[=update_datalist_input]{update_datalist_input()}}
+}

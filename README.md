@@ -8,8 +8,6 @@
 
 </div>
 
-:warning: this is an experiment
-
 ## Rationale
 
 As much as we love the shiny web framework, one great limitation
@@ -17,14 +15,11 @@ is how inputs are processed. Inputs are set given an `inputId`
 which directly translates to an `id` in the generated HTML.
 
 This means inputs can only be created individually, one function
-call creates a single input, it's difficult to dynamically generate
-multiple inputs given their IDs must be unique.
+call creates a single input as this `id`s in HTML have to be unique.
+This makes it's difficult to dynamically.
 
 Also, because of the latter, one can only `observe` individual
-inputs as opposed to multiple ones. Of course, one could wrap
-multiple inputs in a `reactive` and then observe changes on said
-`reactive`, but that does not work well (if at all) for dynamically
-generated inputs.
+inputs as opposed to observing changes in many inputs at once.
 
 This project takes inspiration from vanilla JavaScript where one can
 observe on any valid selector such as a `.class`
@@ -33,32 +28,32 @@ one can have a single `observe` for multiple inputs.
 
 This project implements something similar for shiny by allowing
 users to create inputs that, instead of `inputId`, take
-and `inputClass` argument which is directly passed to the HTML
-`class` attribute. This makes it is possible to sensibly use
+a `name` argument which __can be shared by multiple inputs__. 
+This makes it is possible to sensibly use
 dynamically generated inputs in R as well as open the door
 to many other opportunities.
 
-It seems promising but there are questions on the implementation:
-it currently uses lit for convenience but requires 
-re-programming all inputs that shiny currently offers.
+## Limitations
 
-__This is public for feedback__, please open an issue with
-any of your thoughts, whatever they may be.
+- These inputs are not captured by Shiny's bookmarking session
+- These inputs are not captured by [shinytest2](https://rstudio.github.io/shinytest2/)
+
+These limitations are unlikely to be lifted in the future.
 
 ## Installation
 
 You can install the development version of litter from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("devOpifex/litter")
+# install.packages("remotes")
+remotes::install_github("devOpifex/litter")
 ```
 
 ## Example
 
 {litter} allows using multiple inputs with a single observer.
 
-``` r
+```r
 library(shiny)
 library(litter)
 
@@ -83,3 +78,53 @@ shinyApp(ui, server)
 ```
 
 This makes it easier to work with generated inputs.
+
+## Conventions
+
+All input functions start in `lit`.
+
+All inputs return data in the same format:
+
+```r
+list(
+  props = list(),
+  id = "", # omitted if not set
+  value = 1L
+)
+```
+
+## Props
+
+Whilst inputs that share `name` trigger the same input it can be difficult to 
+distinguish between inputs.
+
+For this you can pass any "prop" to the three dot construct `...`.
+For example, the application below will return the values set to `myProp`
+to `input$btn`.
+
+```r
+library(shiny)
+library(litter)
+
+ui <- fluidPage(
+	litActionButton(
+		name = "btn",
+		"Button #1",
+    myProp = "A"
+	),
+	litActionButton(
+		name = "btn",
+		"Button #2",
+    myProp = "B"
+	)
+)
+
+server <- function(input, output, session){
+	observeEvent(input$btn, {
+		print(input$btn)
+	})
+}
+
+shinyApp(ui, server)
+```
+

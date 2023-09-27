@@ -40,4 +40,6 @@ Update inputs.
 }
 \details{
 Set either of \code{name}, \code{id}, or \code{selector}.
+The function \code{\link[=update_datalist_input]{update_datalist_input()}} is used to server-side
+render the options.
 }

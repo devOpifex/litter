@@ -10,6 +10,8 @@
 #' @param choices Vector (optionally named) of options.
 #' 
 #' @details Set either of `name`, `id`, or `selector`.
+#'  The function [update_datalist_input()] is used to server-side
+#'  render the options.
 #' 
 #' @name update_input
 #' 

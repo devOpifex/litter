@@ -37,7 +37,7 @@ export class LitInput extends LitElement {
     }
 
     let data = {
-      meta: this.meta,
+      props: this.meta,
       value: this.value,
     };
 

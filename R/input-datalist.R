@@ -12,6 +12,10 @@
 #' 
 #' @importFrom htmltools tags
 #' 
+#' @details Can be server-side rendered with [update_datalist_input()].
+#' 
+#' @seealso [update_datalist_input()]
+#' 
 #' @export 
 litDatalistInput <- function(
 	name,
