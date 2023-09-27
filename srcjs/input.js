@@ -1,11 +1,11 @@
 import { html, LitElement } from "lit";
-import { bs5 } from "./css/bs5";
+import { getBs5 } from "./css/bs5";
 import "Shiny";
 import "jQuery";
 import "./update.js";
 
 export class LitInput extends LitElement {
-  static styles = [bs5];
+  static styles = [getBs5()];
 
   static properties = {
     value: { type: String },
