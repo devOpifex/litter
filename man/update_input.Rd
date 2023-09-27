@@ -2,9 +2,19 @@
 % Please edit documentation in R/update.R
 \name{update_input}
 \alias{update_input}
+\alias{update_datalist_input}
 \title{Update inputs}
 \usage{
 update_input(
+  ...,
+  name = NULL,
+  id = NULL,
+  selector = NULL,
+  session = shiny::getDefaultReactiveDomain()
+)
+
+update_datalist_input(
+  choices,
   ...,
   name = NULL,
   id = NULL,
@@ -22,6 +32,8 @@ update_input(
 \item{selector}{A CSS selector.}
 
 \item{session}{A Shiny session.}
+
+\item{choices}{Vector (optionally named) of options.}
 }
 \description{
 Update inputs.

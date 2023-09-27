@@ -36,4 +36,3 @@ litDatalistInput <- function(
 	)
 }
 
-

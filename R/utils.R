@@ -12,3 +12,25 @@ make_options <- function(choices) {
 get_first_option <- function(choices) {
   return(choices[1])
 }
+
+make_endpoint_name <- function(
+  name = NULL,
+  id = NULL,
+  selector = NULL
+){
+  if(!is.null(name))
+    return(endpoint_name(name))
+
+  if(!is.null(id))
+    return(endpoint_name(id))
+
+  gsub("^[[:punct:]]", "", selector) |>
+    endpoint_name()
+}
+
+endpoint_name <- function(name) {
+  sprintf(
+    "litter-endpoint-%s",
+    name
+  )
+}
