@@ -58,20 +58,20 @@ library(shiny)
 library(litter)
 
 ui <- fluidPage(
-	litActionButton(
-		name = "btn",
-		"Button #1"
-	),
-	litActionButton(
-		name = "btn",
-		"Button #2"
-	)
+  litActionButton(
+    name = "btn",
+    "Button #1"
+  ),
+  litActionButton(
+    name = "btn",
+    "Button #2"
+  )
 )
 
 server <- function(input, output, session){
-	observeEvent(input$btn, {
-		print(input$btn)
-	})
+  observeEvent(input$btn, {
+    print(input$btn)
+  })
 }
 
 shinyApp(ui, server)
@@ -81,9 +81,10 @@ This makes it easier to work with generated inputs.
 
 ## Conventions
 
-All input functions start in `lit`.
-
-All inputs return data in the same format:
+- All input functions start in `lit`.
+- All inputs have a `value` (even if it can be a vector)
+- All inputs can be updated with `update_input`
+- All inputs return data in the same format:
 
 ```r
 list(
