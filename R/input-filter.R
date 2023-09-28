@@ -1,6 +1,6 @@
-#' Lit Selector Input
+#' Lit Filter Input
 #' 
-#' Create a selector input.
+#' Create a filter input.
 #' 
 #' @param name Name of the input.
 #' @param dataset Dataset to retrieve variables.
@@ -12,7 +12,7 @@
 #' @importFrom htmltools tags
 #' 
 #' @export 
-litSelectorInput <- function(
+litFilterInput <- function(
 	name,
 	...,
   dataset = NULL,
@@ -26,7 +26,7 @@ litSelectorInput <- function(
     dataset <- list()
 
 	tag2(
-		"litter-selector", 
+		"litter-filter", 
     dataset = dataset |> serialise(),
 		id = id,
 		name = name, 

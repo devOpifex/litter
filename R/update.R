@@ -91,7 +91,7 @@ update_selectize_input <- function(
 
 #' @rdname update_input
 #' @export 
-update_selector_input <- function(
+update_filter_input <- function(
   dataset,
   ...,
   name = NULL,

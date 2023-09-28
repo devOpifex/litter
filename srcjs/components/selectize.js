@@ -37,23 +37,28 @@ export class Selectize extends LitInput {
         el.style.display = "none";
       });
 
-      if (this.endpoint != "" && query != "") {
-        fetch(`${this.endpoint}&query=${encodeURIComponent(query)}`)
-          .then((res) => res.json())
-          .then((data) => {
-            const optionsValuesToSet = data.map((el) => el.value);
-            const missingValues = this.value.filter((val) =>
-              !optionsValuesToSet.includes(val)
-            );
-            let newOpts = this.options.slice(0);
-            let toAdd = newOpts.filter((el) => {
-              return missingValues.includes(el.value);
-            });
-            data.push(...toAdd);
-            this.options = data;
-          })
-          .catch((error) => console.error(error));
+      if (this.endpoint == "") {
+        return;
       }
+
+      if (query == "") {
+        return;
+      }
+      fetch(`${this.endpoint}&query=${encodeURIComponent(query)}`)
+        .then((res) => res.json())
+        .then((data) => {
+          const optionsValuesToSet = data.map((el) => el.value);
+          const missingValues = this.value.filter((val) =>
+            !optionsValuesToSet.includes(val)
+          );
+          let newOpts = this.options.slice(0);
+          let toAdd = newOpts.filter((el) => {
+            return missingValues.includes(el.value);
+          });
+          data.push(...toAdd);
+          this.options = data;
+        })
+        .catch((error) => console.error(error));
     }, 250);
   }
 

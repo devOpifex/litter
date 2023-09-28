@@ -4,7 +4,7 @@
 \alias{update_input}
 \alias{update_datalist_input}
 \alias{update_selectize_input}
-\alias{update_selector_input}
+\alias{update_filter_input}
 \title{Update inputs}
 \usage{
 update_input(
@@ -33,7 +33,7 @@ update_selectize_input(
   session = shiny::getDefaultReactiveDomain()
 )
 
-update_selector_input(
+update_filter_input(
   dataset,
   ...,
   name = NULL,

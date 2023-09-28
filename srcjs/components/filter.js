@@ -4,7 +4,7 @@ import "Shiny";
 import "jQuery";
 import { LitInput } from "../input.js";
 
-export class Selector extends LitInput {
+export class Filter extends LitInput {
   static properties = {
     endpoint: { type: String },
     dataset: { type: Array },
@@ -151,4 +151,4 @@ export class Selector extends LitInput {
   }
 }
 
-customElements.define("litter-selector", Selector);
+customElements.define("litter-filter", Filter);
