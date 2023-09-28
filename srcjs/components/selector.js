@@ -58,16 +58,44 @@ export class Selector extends LitInput {
   }
 
   _renderInput(variable) {
-    if (variable.type) {
+    if (variable.type == "factor") {
       return this._renderFactor(variable);
     }
+
+    if (variable.type == "numeric") {
+      return this._renderNumeric(variable);
+    }
+
+    if (variable.type == "logical") {
+      return this._renderLogical(variable);
+    }
+
+    return this._renderCharacter(variable);
   }
 
   _renderFactor(variable) {
-    return html`<litter-datalist meta="[]" placeholder="Search a value" name="litterBin" options='[{"label":"setosa","value":"setosa"},{"label":"versicolor","value":"versicolor"},{"label":"virginica","value":"virginica"}]' ></litter-datalist>`;
+    let values = variable.values.map((el) => {
+      return { label: el, label: el };
+    });
+    return html`<litter-selectize meta="[]" placeholder="Search a value" name="" options='${
+      JSON.stringify(values)
+    }' ></litter-selectize>`;
+  }
+
+  _renderNumeric(variable) {
+    return html`<litter-range min="${variable.min}" max="${variable.max}" step="1" name=""></litter-range>`;
+  }
+
+  _renderCharacter(variable) {
+    return html`<litter-text name="" value=""></litter-text>`;
+  }
+
+  _renderLogical(variable) {
+    return html`<litter-checkboxes name="" value='[true, false]' options='[true, false]'></litter-checkboxes>`;
   }
 
   render() {
+    console.log(this.dataset);
     const button = this._renderButton();
 
     // no variables (yet)

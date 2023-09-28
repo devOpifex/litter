@@ -30,6 +30,10 @@ export class LitInput extends LitElement {
   }
 
   _send() {
+    if (this.name == "") {
+      return;
+    }
+
     if (this.callback) {
       let cb = eval(this.callback);
       cb(this);

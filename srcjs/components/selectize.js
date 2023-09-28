@@ -94,7 +94,7 @@ export class Selectize extends LitInput {
     return html`<div class="d-flex">
       <div class="flex-shrink-1 position-relative">
         <input
-          class='form-control ${this.class}' @keyup=${this._keyup} />
+          placeholder="Search..." class='form-control ${this.class}' @keyup=${this._keyup} />
         <ul style=${
       styleMap({ zIndex: 9999, maxHeight: 15 + "rem" })
     } class="list-group w-100 position-absolute d-none bg-light">${opts}</ul>
