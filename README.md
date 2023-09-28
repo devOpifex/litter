@@ -87,6 +87,7 @@ This makes it easier to work with generated inputs.
 - All inputs have a `value` (even if it can be a vector)
 - All inputs can be updated with `update_input`
 - All inputs return data in the same format:
+- All inputs accept a `callback` argument: Javascript callback function
 
 ```r
 list(
