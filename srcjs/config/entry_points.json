@@ -55,6 +55,10 @@
     "import": "./srcjs/components/selectize.js",
     "dependOn": ["lit", "bs5"]
   },
+  "toggler": {
+    "import": "./srcjs/components/toggler.js",
+    "dependOn": ["lit", "bs5"]
+  },
   "lit": "lit",
   "bs5": "./srcjs/css/bs5"
 }
