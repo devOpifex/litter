@@ -13,7 +13,7 @@
 #' 
 #' @export 
 litSelectizeInput <- function(
-	name,
+	name = "",
 	choices = list(),
 	...,
 	id = NULL,

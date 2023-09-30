@@ -11,7 +11,7 @@
 #' 
 #' @export 
 litTextInput <- function(
-	name,
+	name = "",
 	value = "", 
 	placeholder = "",
 	...,

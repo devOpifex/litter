@@ -5,7 +5,7 @@
 \title{Lit Range Input}
 \usage{
 litRangeInput(
-  name,
+  name = "",
   ...,
   id = NULL,
   min = 0L,

@@ -11,7 +11,7 @@
 #' 
 #' @export 
 litPasswordInput <- function(
-	name,
+	name = "",
 	value = "", 
 	placeholder = "",
 	...,

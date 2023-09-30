@@ -4,7 +4,14 @@
 \alias{litTextInput}
 \title{Lit Text Input}
 \usage{
-litTextInput(name, value = "", placeholder = "", ..., id = NULL, class = NULL)
+litTextInput(
+  name = "",
+  value = "",
+  placeholder = "",
+  ...,
+  id = NULL,
+  class = NULL
+)
 }
 \arguments{
 \item{name}{Name of the input.}

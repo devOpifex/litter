@@ -12,7 +12,7 @@
 #' 
 #' @export 
 litTextLabelInput <- function(
-	name,
+	name = "",
 	value = "", 
   label = "",
 	placeholder = label,

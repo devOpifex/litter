@@ -4,7 +4,14 @@
 \alias{litColorInput}
 \title{Lit Color Input}
 \usage{
-litColorInput(name, value = "", placeholder = "", ..., id = NULL, class = NULL)
+litColorInput(
+  name = "",
+  value = "",
+  placeholder = "",
+  ...,
+  id = NULL,
+  class = NULL
+)
 }
 \arguments{
 \item{name}{Name of the input.}

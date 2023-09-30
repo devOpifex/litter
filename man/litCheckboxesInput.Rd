@@ -5,7 +5,7 @@
 \title{Lit Checkboxes Input}
 \usage{
 litCheckboxesInput(
-  name,
+  name = "",
   choices = list(),
   ...,
   id = NULL,

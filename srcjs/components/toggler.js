@@ -3,13 +3,17 @@ import "Shiny";
 import "jQuery";
 import { LitInput } from "../input.js";
 import { styleMap } from "lit/directives/style-map.js";
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 
 export class Toggler extends LitInput {
   static properties = {
-    inputShown: {type: Boolean, state: false}
+    inputShown: {type: Boolean, state: false},
+    feedback: { type: String }
   }
 
   firstUpdated(){
+    this.inputShown = false;
+    this.feedback = "";
   }
 
   _toggle(){
@@ -52,6 +56,7 @@ export class Toggler extends LitInput {
           </svg>
         </button>
       </div>
+      ${unsafeHTML(this.feedback)}
     `;
   }
 }

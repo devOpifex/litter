@@ -5,7 +5,7 @@
 \title{Lit Password Input}
 \usage{
 litPasswordInput(
-  name,
+  name = "",
   value = "",
   placeholder = "",
   ...,

@@ -5,7 +5,7 @@
 \title{Lit Filter Input}
 \usage{
 litFilterInput(
-  name,
+  name = "",
   ...,
   dataset = NULL,
   id = NULL,

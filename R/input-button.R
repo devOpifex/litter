@@ -37,7 +37,7 @@
 #' 
 #' @export 
 litActionButton <- function(
-	name,
+	name = "",
 	content = "Click me", 
 	...,
 	id = NULL,

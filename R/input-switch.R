@@ -11,7 +11,7 @@
 #' 
 #' @export 
 litSwitchInput <- function(
-	name,
+	name = "",
 	value = TRUE, 
 	label = "",
 	...,

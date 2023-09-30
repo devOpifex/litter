@@ -11,7 +11,7 @@
 #' 
 #' @export 
 litColorInput <- function(
-	name,
+	name = "",
 	value = "", 
 	placeholder = "",
 	...,

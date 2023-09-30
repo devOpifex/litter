@@ -30,7 +30,7 @@
 #' 
 #' @export 
 litRangeInput <- function(
-	name,
+	name = "",
 	...,
 	id = NULL,
 	min = 0L,

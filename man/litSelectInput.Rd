@@ -5,7 +5,7 @@
 \title{Lit Select Input}
 \usage{
 litSelectInput(
-  name,
+  name = "",
   choices = list(),
   ...,
   id = NULL,

@@ -5,7 +5,7 @@
 \title{Lit Selectize Input}
 \usage{
 litSelectizeInput(
-  name,
+  name = "",
   choices = list(),
   ...,
   id = NULL,

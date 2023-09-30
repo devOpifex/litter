@@ -8,6 +8,8 @@
 #' @param input The `input` to reveal.
 #' @param ... Passed to props.
 #' 
+#' @details This can be updated with the `feedback` argument in [update_input()].
+#' 
 #' @importFrom htmltools tagAppendAttributes span tagGetAttribute
 #' 
 #' @export 
@@ -31,7 +33,7 @@ litTogglerInput <- function(
     display |>
       tagAppendAttributes(slot = "display"),
     input |>
-      tagAppendAttributes(slot = "input", send = "false"),
+      tagAppendAttributes(slot = "input"),
     meta = meta
 	)
 }

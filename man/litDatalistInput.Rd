@@ -5,7 +5,7 @@
 \title{Lit Datalist Input}
 \usage{
 litDatalistInput(
-  name,
+  name = "",
   choices = list(),
   ...,
   id = NULL,

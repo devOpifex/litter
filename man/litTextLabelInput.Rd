@@ -5,7 +5,7 @@
 \title{Lit Text Label Input}
 \usage{
 litTextLabelInput(
-  name,
+  name = "",
   value = "",
   label = "",
   placeholder = label,

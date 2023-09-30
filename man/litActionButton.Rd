@@ -5,7 +5,7 @@
 \title{Lit Action Button}
 \usage{
 litActionButton(
-  name,
+  name = "",
   content = "Click me",
   ...,
   id = NULL,

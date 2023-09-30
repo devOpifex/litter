@@ -13,7 +13,7 @@
 #' 
 #' @export 
 litCheckboxesInput <- function(
-	name,
+	name = "",
 	choices = list(),
 	...,
 	id = NULL,

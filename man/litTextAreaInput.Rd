@@ -5,7 +5,7 @@
 \title{Lit Text Area Input}
 \usage{
 litTextAreaInput(
-  name,
+  name = "",
   value = "",
   placeholder = "",
   ...,

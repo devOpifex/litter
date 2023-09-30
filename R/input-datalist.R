@@ -18,7 +18,7 @@
 #' 
 #' @export 
 litDatalistInput <- function(
-	name,
+	name = "",
 	choices = list(),
 	...,
 	id = NULL,

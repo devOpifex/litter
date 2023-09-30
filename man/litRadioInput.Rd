@@ -5,7 +5,7 @@
 \title{Lit Radio Input}
 \usage{
 litRadioInput(
-  name,
+  name = "",
   choices = list(),
   ...,
   id = NULL,

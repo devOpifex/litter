@@ -13,7 +13,7 @@
 #' 
 #' @export 
 litFilterInput <- function(
-	name,
+	name = "",
 	...,
   dataset = NULL,
 	id = NULL,

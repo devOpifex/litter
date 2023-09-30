@@ -19,3 +19,6 @@ litTogglerInput(name, display, input, ...)
 Create an input that is initially hidden but revealed on click.
 This hijacks the original input which no longer sends values to the server.
 }
+\details{
+This can be updated with the \code{feedback} argument in \code{\link[=update_input]{update_input()}}.
+}

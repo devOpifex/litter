@@ -13,7 +13,7 @@
 #' 
 #' @export 
 litRadioInput <- function(
-	name,
+	name = "",
 	choices = list(),
 	...,
 	id = NULL,
