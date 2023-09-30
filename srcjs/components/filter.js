@@ -22,7 +22,7 @@ export class Filter extends LitInput {
   }
 
   _showDropdown() {
-    this.shadowRoot.querySelector(".dropdown-menu").style.display = "flow-root";
+    this.shadowRoot.querySelector(".dropdown-menu").style.display = "block";
     this.shown = true;
   }
 
@@ -95,7 +95,6 @@ export class Filter extends LitInput {
   }
 
   render() {
-    console.log(this.dataset);
     const button = this._renderButton();
 
     // no variables (yet)

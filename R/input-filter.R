@@ -22,6 +22,9 @@ litFilterInput <- function(
 ) {
 	meta <- serialise2(...)
 
+  if(!is.null(dataset))
+    dataset <- dataset |> get_variables()
+
   if(is.null(dataset))
     dataset <- list()
 
