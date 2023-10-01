@@ -9,11 +9,14 @@ export class Toggler extends LitInput {
   static properties = {
     inputShown: { type: Boolean, state: false },
     feedback: { type: String },
+    accept: { type: String },
   };
 
-  firstUpdated() {
+  constructor() {
+    super();
     this.inputShown = false;
     this.feedback = "";
+    this.accept = true;
   }
 
   _toggle() {
@@ -40,6 +43,10 @@ export class Toggler extends LitInput {
   }
 
   _validate() {
+    if (this.accept != "true") {
+      return;
+    }
+
     this._toggle();
     this._getValue();
     this._send();

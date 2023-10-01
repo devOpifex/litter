@@ -13,7 +13,6 @@ export class LitInput extends LitElement {
     class: { type: String },
     priority: { type: String },
     id: { type: String },
-    send: {state: false},
     meta: {},
   };
 
@@ -24,7 +23,6 @@ export class LitInput extends LitElement {
     this.meta = {};
     this.id = null;
     this.timeout = null;
-    this.send = "true";
   }
 
   firstUpdated() {
@@ -32,15 +30,13 @@ export class LitInput extends LitElement {
   }
 
   _send() {
-    if(this.send != "true")
-      return
-
-    if (this.name == "")
-      return;
-
     if (this.callback) {
       let cb = eval(this.callback);
       cb(this);
+      return;
+    }
+
+    if (this.name == "") {
       return;
     }
 
