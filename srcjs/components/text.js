@@ -4,7 +4,7 @@ import "jQuery";
 import { LitInput } from "../input.js";
 
 export class Text extends LitInput {
-  _change() {
+  _keyup() {
     this.value = this.shadowRoot.querySelector("input").value;
   }
 
@@ -17,7 +17,7 @@ export class Text extends LitInput {
       class = 'form-control ${this.class}'
       value = '${this.value}'
       type = 'text'
-			@keyup='${this._change}'
+			@keyup='${this._keyup}'
 			placeholder='${this.placeholder}'>`;
   }
 }

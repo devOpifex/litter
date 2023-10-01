@@ -9,7 +9,7 @@ litSelectizeInput(
   choices = list(),
   ...,
   id = NULL,
-  value = NULL,
+  value = list(),
   class = NULL
 )
 }

@@ -17,7 +17,7 @@ litSelectizeInput <- function(
 	choices = list(),
 	...,
 	id = NULL,
-  value = NULL,
+  value = list(),
   class = NULL
 ) {
 	meta <- serialise2(...)

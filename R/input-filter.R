@@ -58,6 +58,7 @@ get_data.default <- function(x){
   list(
     type = "character",
     label = attr(x, "label"),
+    value = "",
     description = attr(x, "description")
   )
 }
@@ -71,6 +72,7 @@ get_data.numeric <- function(x){
     step = get_step(x),
     type = "numeric",
     label = attr(x, "label"),
+    value = min(x),
     description = attr(x, "description")
   )
 }
@@ -83,6 +85,7 @@ get_data.Date <- function(x){
     max = max(x),
     type = "date",
     label = attr(x, "label"),
+    vakue = min(x),
     description = attr(x, "description")
   )
 }
@@ -95,6 +98,7 @@ get_data.POSIXct <- function(x){
     max = max(x),
     type = "datetime",
     label = attr(x, "label"),
+    value = min(x),
     description = attr(x, "description")
   )
 }
@@ -102,10 +106,13 @@ get_data.POSIXct <- function(x){
 #' @method get_data factor
 #' @export
 get_data.factor <- function(x){
+  levels <- x |> factor() |> unique() |> unname()
+
   list(
-    values = x |> factor() |> unique() |> unname(),
+    values = levels,
     type = "factor",
     label = attr(x, "label"),
+    value = levels[1],
     description = attr(x, "description")
   )
 }
@@ -117,6 +124,7 @@ get_data.logical <- function(x){
     values = c(TRUE, FALSE),
     type = "logical",
     label = attr(x, "label"),
+    value = c(TRUE, FALSE),
     description = attr(x, "description")
   )
 }

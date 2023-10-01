@@ -9,6 +9,7 @@ export class Filter extends LitInput {
     endpoint: { type: String },
     dataset: { type: Array },
     selected: { type: Array },
+    value: {},
   };
 
   firstUpdated() {}
@@ -19,6 +20,8 @@ export class Filter extends LitInput {
     this.dataset = [];
     this.selected = [];
     this.shown = false;
+    this.value = {};
+    this.timeout;
   }
 
   _showDropdown() {
@@ -47,10 +50,24 @@ export class Filter extends LitInput {
   }
 
   _variableRemove(event) {
+    let variable = event.currentTarget.dataset.value;
     const filtered = this.selected.filter((selected) => {
-      selected != event.target.dataset.value;
+      return selected != variable;
     });
     this.selected = filtered;
+    delete this.value[variable];
+    this._send();
+  }
+
+  _input(e) {
+    let target = e.target;
+    let input = e.target.dataset.value;
+    clearTimeout(this.timeout);
+
+    this.timeout = setTimeout(() => {
+      this.value[input] = target.value;
+      this._send();
+    }, 350);
   }
 
   _renderButton() {
@@ -70,28 +87,37 @@ export class Filter extends LitInput {
       return this._renderLogical(variable);
     }
 
+    this.value[variable.name] = variable.value;
+    this._send();
+
     return this._renderCharacter(variable);
   }
 
   _renderFactor(variable) {
     let values = variable.values.map((el) => {
-      return { label: el, label: el };
+      return { value: el, label: el };
     });
-    return html`<litter-selectize meta="[]" placeholder="Search a value" name="" options='${
+    return html`<litter-selectize data-value="${variable.name}" @input=${this._input} meta="[]" placeholder="Search a value" name="" options='${
       JSON.stringify(values)
     }' ></litter-selectize>`;
   }
 
   _renderNumeric(variable) {
-    return html`<litter-range min="${variable.min}" max="${variable.max}" step="1" name=""></litter-range>`;
+    let step = 1;
+
+    if ((variable.max - variable.min) < 1) {
+      step = .1;
+    }
+
+    return html`<litter-range data-value="${variable.name}" @input=${this._input} min="${variable.min}" max="${variable.max}" step="${step}" name=""></litter-range>`;
   }
 
   _renderCharacter(variable) {
-    return html`<litter-text name="" value=""></litter-text>`;
+    return html`<litter-text data-value="${variable.name}" @input=${this._input} name="" value=""></litter-text>`;
   }
 
   _renderLogical(variable) {
-    return html`<litter-checkboxes name="" value='[true, false]' options='[true, false]'></litter-checkboxes>`;
+    return html`<litter-checkboxes data-value="${variable.name}" @input=${this._input} name="" value='[true, false]' options='[true, false]'></litter-checkboxes>`;
   }
 
   render() {
