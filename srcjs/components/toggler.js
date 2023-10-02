@@ -10,6 +10,7 @@ export class Toggler extends LitInput {
     inputShown: { type: Boolean, state: false },
     feedback: { type: String },
     accept: { type: String },
+    default: { type: String, attribute: false },
   };
 
   constructor() {
@@ -17,6 +18,7 @@ export class Toggler extends LitInput {
     this.inputShown = false;
     this.feedback = "";
     this.accept = true;
+    this.default = "";
   }
 
   _toggle() {
@@ -29,6 +31,10 @@ export class Toggler extends LitInput {
   }
 
   _showInput() {
+    this.default =
+      this.shadowRoot.querySelector("slot[name=input]").assignedElements({
+        flatten: true,
+      })[0].value;
     this.shadowRoot.querySelector("slot[name=input]").assignedElements({
       flatten: true,
     })[0].value = this.value;
@@ -52,6 +58,14 @@ export class Toggler extends LitInput {
     this._send();
   }
 
+  _cancel() {
+    this.feedback = "";
+    this.shadowRoot.querySelector("slot[name=input]").assignedElements({
+      flatten: true,
+    })[0].value = this.default;
+    this._toggle();
+  }
+
   render() {
     return html`
       <slot @click=${this._showInput} name="display">Click me</slot>
@@ -60,7 +74,7 @@ export class Toggler extends LitInput {
           <slot name="input"></slot>
         </div>
         <div class="flex-shrink-1">
-          <button @click=${this._toggle} class="btn btn-danger">
+          <button @click=${this._cancel} class="btn btn-danger">
             <svg style="width:1rem" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-100">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
