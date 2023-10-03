@@ -11,5 +11,6 @@
 tag2 <- function(.name, ..., .script = NULL){
   if(is.null(.script))
     .script <- gsub(".*-", "", .name)
+
 	attach_dep(tag(.name, list(...)), script = .script)
 }

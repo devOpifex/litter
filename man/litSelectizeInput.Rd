@@ -11,7 +11,7 @@ litSelectizeInput(
   id = NULL,
   value = list(),
   class = NULL,
-  callback = ""
+  callback = NULL
 )
 }
 \arguments{

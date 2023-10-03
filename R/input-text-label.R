@@ -20,7 +20,7 @@ litTextLabelInput <- function(
 	...,
 	id = NULL,
   class = NULL,
-  callback = ""
+  callback = NULL
 ) {
 	meta <- serialise2(...)
 	tag2(

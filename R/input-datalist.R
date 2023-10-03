@@ -26,7 +26,7 @@ litDatalistInput <- function(
   value = NULL,
   class = NULL,
   placeholder = NULL,
-  callback = ""
+  callback = NULL
 ) {
 	meta <- serialise2(...)
 

@@ -20,7 +20,7 @@ litSelectInput <- function(
 	id = NULL,
   value = NULL,
   class = NULL,
-  callback = ""
+  callback = NULL
 ) {
 	meta <- serialise2(...)
 

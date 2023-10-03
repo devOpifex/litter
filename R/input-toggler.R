@@ -20,7 +20,7 @@ litTogglerInput <- function(
   display,
   input,
   ...,
-  callback = callback
+  callback = NULL
 ) {
   if(is.character(display))
     display <- span(display)

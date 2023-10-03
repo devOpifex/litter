@@ -18,16 +18,16 @@ litPasswordInput <- function(
 	...,
 	id = NULL,
   class = NULL,
-  callback = ""
+  callback = NULL
 ) {
 	meta <- serialise2(...)
 	tag2(
 		"litter-password", 
-		id = id,
-		name = name, 
-		value = value,
-		meta = meta,
-		placeholder = placeholder,
+    id = id,
+    name = name, 
+    value = value,
+    meta = meta,
+    placeholder = placeholder,
     class = class,
     callback = callback
 	)

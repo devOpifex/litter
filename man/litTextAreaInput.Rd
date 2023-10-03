@@ -11,7 +11,7 @@ litTextAreaInput(
   ...,
   id = NULL,
   class = NULL,
-  callback = ""
+  callback = NULL
 )
 }
 \arguments{

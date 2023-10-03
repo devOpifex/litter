@@ -11,7 +11,7 @@ litRadioInput(
   id = NULL,
   value = NULL,
   class = NULL,
-  callback = ""
+  callback = NULL
 )
 }
 \arguments{

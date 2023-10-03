@@ -12,7 +12,7 @@ litDatalistInput(
   value = NULL,
   class = NULL,
   placeholder = NULL,
-  callback = ""
+  callback = NULL
 )
 }
 \arguments{

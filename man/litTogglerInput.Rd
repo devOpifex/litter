@@ -4,7 +4,7 @@
 \alias{litTogglerInput}
 \title{Lit Toggler Input}
 \usage{
-litTogglerInput(name, display, input, ..., callback = callback)
+litTogglerInput(name, display, input, ..., callback = NULL)
 }
 \arguments{
 \item{name}{Name of the input.}

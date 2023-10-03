@@ -39,7 +39,7 @@ litRangeInput <- function(
 	step = NULL,
 	value = NULL,
   class = NULL,
-  callback = ""
+  callback = NULL
 ) {
 	meta <- serialise2(...)
 
