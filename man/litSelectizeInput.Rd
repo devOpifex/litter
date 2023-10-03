@@ -10,7 +10,8 @@ litSelectizeInput(
   ...,
   id = NULL,
   value = list(),
-  class = NULL
+  class = NULL,
+  callback = ""
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ litSelectizeInput(
 \item{value}{Value of the input.}
 
 \item{class}{Any additional classes.}
+
+\item{callback}{A JavaScript callback functions that accepts one argument.}
 }
 \description{
 Create a selectize input.

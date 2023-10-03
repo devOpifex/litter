@@ -10,7 +10,8 @@ litCheckboxesInput(
   ...,
   id = NULL,
   value = list(),
-  class = NULL
+  class = NULL,
+  callback = ""
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ litCheckboxesInput(
 \item{value}{\code{choices} that are checked.}
 
 \item{class}{Any additional classes.}
+
+\item{callback}{A JavaScript callback functions that accepts one argument.}
 }
 \description{
 Create checkboxes input.

@@ -9,6 +9,7 @@
 #' @param class Any additional classes.
 #' @param value Value of the input.
 #' @param placeholder Placeholder value.
+#' @param callback A JavaScript callback functions that accepts one argument.
 #' 
 #' @importFrom htmltools tags
 #' 
@@ -24,7 +25,8 @@ litDatalistInput <- function(
 	id = NULL,
   value = NULL,
   class = NULL,
-  placeholder = NULL
+  placeholder = NULL,
+  callback = ""
 ) {
 	meta <- serialise2(...)
 
@@ -36,7 +38,8 @@ litDatalistInput <- function(
     value = value,
     class = class,
     options = make_options(choices) |> serialise(),
-    placeholder = placeholder
+    placeholder = placeholder,
+    callback = callback
 	)
 }
 

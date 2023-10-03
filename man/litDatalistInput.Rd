@@ -11,7 +11,8 @@ litDatalistInput(
   id = NULL,
   value = NULL,
   class = NULL,
-  placeholder = NULL
+  placeholder = NULL,
+  callback = ""
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ litDatalistInput(
 \item{class}{Any additional classes.}
 
 \item{placeholder}{Placeholder value.}
+
+\item{callback}{A JavaScript callback functions that accepts one argument.}
 }
 \description{
 Create a datalist input.

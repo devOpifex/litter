@@ -9,6 +9,7 @@
 #' of the range.
 #' @param step Incremental steps the range must take.
 #' @param class Any additional classes.
+#' @param callback A JavaScript callback functions that accepts one argument.
 #' 
 #' @examples 
 #' library(shiny)
@@ -37,7 +38,8 @@ litRangeInput <- function(
 	max = 10L,
 	step = NULL,
 	value = NULL,
-  class = NULL
+  class = NULL,
+  callback = ""
 ) {
 	meta <- serialise2(...)
 
@@ -50,6 +52,7 @@ litRangeInput <- function(
 		step = step,
 		value = value,
     meta = meta,
-    class = class
+    class = class,
+    callback = callback
 	)
 }

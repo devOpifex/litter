@@ -88,6 +88,8 @@ This makes it easier to work with generated inputs.
 - All inputs can be updated with `update_input`
 - All inputs return data in the same format:
 - All inputs accept a `callback` argument: Javascript callback function
+- All inputs return the same data structure
+- Labels are not part of the input
 
 ```r
 list(
@@ -105,6 +107,35 @@ distinguish between inputs.
 For this you can pass any "prop" to the three dot construct `...`.
 For example, the application below will return the values set to `myProp`
 to `input$btn`.
+
+```r
+library(shiny)
+library(litter)
+
+ui <- fluidPage(
+  theme = bslib::bs_theme(5L),
+  litActionButton(
+    name = "btn",
+    "Button #1",
+    myProp = "A"
+  ),
+  litActionButton(
+    name = "btn",
+    "Button #2",
+    myProp = "B"
+  )
+)
+
+server <- function(input, output, session){
+  observeEvent(input$btn, {
+    print(input$btn)
+  })
+}
+
+shinyApp(ui, server)
+```
+
+## Callback
 
 ```r
 library(shiny)

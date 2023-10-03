@@ -4,7 +4,7 @@
 \alias{litTogglerInput}
 \title{Lit Toggler Input}
 \usage{
-litTogglerInput(name, display, input, ...)
+litTogglerInput(name, display, input, ..., callback = callback)
 }
 \arguments{
 \item{name}{Name of the input.}
@@ -14,6 +14,8 @@ litTogglerInput(name, display, input, ...)
 \item{input}{The \code{input} to reveal.}
 
 \item{...}{Passed to props.}
+
+\item{callback}{A JavaScript callback functions that accepts one argument.}
 }
 \description{
 Create an input that is initially hidden but revealed on click.

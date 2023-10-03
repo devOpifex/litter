@@ -9,6 +9,7 @@
 #' @param id Id of the input.
 #' @param ... Passed to props.
 #' @param class Any additional classes.
+#' @param callback A JavaScript callback functions that accepts one argument.
 #' 
 #' @export 
 litTextLabelInput <- function(
@@ -18,7 +19,8 @@ litTextLabelInput <- function(
 	placeholder = label,
 	...,
 	id = NULL,
-  class = NULL
+  class = NULL,
+  callback = ""
 ) {
 	meta <- serialise2(...)
 	tag2(
@@ -29,7 +31,8 @@ litTextLabelInput <- function(
 		meta = meta,
 		placeholder = placeholder,
     class = class,
-    label = label
+    label = label,
+    callback = callback
 	)
 }
 

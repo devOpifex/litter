@@ -10,7 +10,8 @@ litRadioInput(
   ...,
   id = NULL,
   value = NULL,
-  class = NULL
+  class = NULL,
+  callback = ""
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ litRadioInput(
 \item{value}{\code{choices} that are checked.}
 
 \item{class}{Any additional classes.}
+
+\item{callback}{A JavaScript callback functions that accepts one argument.}
 }
 \description{
 Create radio input.

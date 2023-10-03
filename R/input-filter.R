@@ -8,6 +8,7 @@
 #' @param ... Passed to props.
 #' @param class Any additional classes.
 #' @param value Value of the input.
+#' @param callback A JavaScript callback functions that accepts one argument.
 #' 
 #' @importFrom htmltools tags
 #' 
@@ -18,7 +19,8 @@ litFilterInput <- function(
   dataset = NULL,
 	id = NULL,
   value = NULL,
-  class = NULL
+  class = NULL,
+  callback = ""
 ) {
 	meta <- serialise2(...)
 
@@ -35,7 +37,8 @@ litFilterInput <- function(
 		name = name, 
 		meta = meta,
     value = value,
-    class = class
+    class = class,
+    callback = callback
 	)
 }
 

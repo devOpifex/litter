@@ -9,6 +9,7 @@
 #' or valid `shiny::tags`.
 #' @param class Any additional classes.
 #' @param value Value of the input.
+#' @param callback A JavaScript callback functions that accepts one argument.
 #' 
 #' @examples 
 #' library(shiny)
@@ -42,7 +43,8 @@ litActionButton <- function(
 	...,
 	id = NULL,
   class = NULL,
-  value = NULL
+  value = NULL,
+  callback = NULL
 ) {
 	meta <- serialise2(...)
 
@@ -56,6 +58,7 @@ litActionButton <- function(
 		meta = meta,
     class = class,
     value = value,
+    callback = callback,
 		content
 	)
 }

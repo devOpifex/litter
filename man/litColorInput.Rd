@@ -10,7 +10,8 @@ litColorInput(
   placeholder = "",
   ...,
   id = NULL,
-  class = NULL
+  class = NULL,
+  callback = ""
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ litColorInput(
 \item{id}{Id of the input.}
 
 \item{class}{Any additional classes.}
+
+\item{callback}{A JavaScript callback functions that accepts one argument.}
 }
 \description{
 Create a color input.

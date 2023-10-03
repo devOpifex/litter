@@ -10,7 +10,8 @@ litActionButton(
   ...,
   id = NULL,
   class = NULL,
-  value = NULL
+  value = NULL,
+  callback = NULL
 )
 }
 \arguments{
@@ -26,6 +27,8 @@ or valid \code{shiny::tags}.}
 \item{class}{Any additional classes.}
 
 \item{value}{Value of the input.}
+
+\item{callback}{A JavaScript callback functions that accepts one argument.}
 }
 \description{
 Create an action button.

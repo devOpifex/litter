@@ -11,7 +11,8 @@ litTextLabelInput(
   placeholder = label,
   ...,
   id = NULL,
-  class = NULL
+  class = NULL,
+  callback = ""
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ litTextLabelInput(
 \item{id}{Id of the input.}
 
 \item{class}{Any additional classes.}
+
+\item{callback}{A JavaScript callback functions that accepts one argument.}
 }
 \description{
 Create a text input with a floating label.

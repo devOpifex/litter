@@ -12,7 +12,8 @@ litRangeInput(
   max = 10L,
   step = NULL,
   value = NULL,
-  class = NULL
+  class = NULL,
+  callback = ""
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ of the range.}
 \item{step}{Incremental steps the range must take.}
 
 \item{class}{Any additional classes.}
+
+\item{callback}{A JavaScript callback functions that accepts one argument.}
 }
 \description{
 Create a range input.

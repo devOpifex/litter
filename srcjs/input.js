@@ -12,6 +12,7 @@ export class LitInput extends LitElement {
     name: { type: String },
     class: { type: String },
     priority: { type: String },
+    callback: { type: String },
     id: { type: String },
     meta: {},
   };
@@ -23,6 +24,7 @@ export class LitInput extends LitElement {
     this.meta = {};
     this.id = null;
     this.timeout = null;
+    this.callback = "";
   }
 
   firstUpdated() {

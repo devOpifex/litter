@@ -8,6 +8,7 @@
 #' @param ... Passed to props.
 #' @param class Any additional classes.
 #' @param value Value of the input.
+#' @param callback A JavaScript callback functions that accepts one argument.
 #' 
 #' @importFrom htmltools tags
 #' 
@@ -18,7 +19,8 @@ litSelectInput <- function(
 	...,
 	id = NULL,
   value = NULL,
-  class = NULL
+  class = NULL,
+  callback = ""
 ) {
 	meta <- serialise2(...)
 
@@ -32,7 +34,8 @@ litSelectInput <- function(
 		meta = meta,
     value = value,
     class = class,
-    options = make_options(choices) |> serialise()
+    options = make_options(choices) |> serialise(),
+    callback = callback
 	)
 }
 
