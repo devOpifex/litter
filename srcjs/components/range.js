@@ -31,7 +31,7 @@ export class Range extends LitInput {
     const value = props.get("value");
     let output = this.shadowRoot.querySelector("output");
     let perc = ((this.value - this.min) * 100) / (this.max - this.min);
-    this.styles = { left: `calc(${perc}% + (${8 - perc * 0.20}px))` };
+    this.styles = { left: `calc(${perc}% + (${1 - perc * 0.15}px))` };
   }
 
   updated() {
@@ -39,14 +39,14 @@ export class Range extends LitInput {
   }
 
   _change() {
-    this.value = this._input.value;
+    this.value = parseInt(this._input.value);
     let output = this.shadowRoot.querySelector("output");
     let perc = ((this.value - this.min) * 100) / (this.max - this.min);
-    this.styles = { left: `calc(${perc}% + (${8 - perc * 0.20}px))` };
+    this.styles = { left: `calc(${perc}% + (${1 - perc * 0.15}px))` };
   }
 
   render() {
-    return html`<div>
+    return html`<div class="position-relative w-100">
       <span class="float-start" style=${
       styleMap({ fontSize: .75 + `rem` })
     }>${this.min}</span>
@@ -56,7 +56,6 @@ export class Range extends LitInput {
       <output class="position-absolute rounded px-1 bg-primary text-white" style=${
       styleMap(this.styles)
     }>${this.value}</output>
-    </div>
       <input
         @input='${this._change}'
         type='range'
@@ -64,7 +63,8 @@ export class Range extends LitInput {
         max='${this.max}'
         step='${this.step}'
         value='${this.value}'
-        class='form-range ${this.class}'>`;
+        class='form-range ${this.class}'>
+    </div>`;
   }
 }
 

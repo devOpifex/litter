@@ -6,8 +6,8 @@
 \usage{
 litTextLabelInput(
   name = "",
+  label,
   value = "",
-  label = "",
   placeholder = label,
   ...,
   id = NULL,
@@ -18,9 +18,9 @@ litTextLabelInput(
 \arguments{
 \item{name}{Name of the input.}
 
-\item{value}{Value of the input.}
-
 \item{label}{Label of the input.}
+
+\item{value}{Value of the input.}
 
 \item{placeholder}{Placeholder text.}
 

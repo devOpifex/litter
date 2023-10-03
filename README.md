@@ -33,6 +33,8 @@ This makes it is possible to sensibly use
 dynamically generated inputs in R as well as open the door
 to many other opportunities.
 
+You can see a small explanation/example with: `gallery()`.
+
 ## Limitations
 
 - Only works with bslib's Bootstrap 5.
@@ -161,7 +163,7 @@ library(litter)
 
 ui <- fluidPage(
   theme = bslib::bs_theme(5L),
-  p("Type", tags$code("error"), "below"),
+  span("Type", tags$code("error"), "below"),
   litTextInput(
     name = "txt"
   )

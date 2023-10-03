@@ -14,5 +14,5 @@ bundle_dev:
 	Rscript -e "packer::bundle_dev()"
 
 run: document bundle_dev
-	Rscript test.R
+	Rscript -e "devtools::load_all();options(shiny.port = 3000L);gallery();"
 

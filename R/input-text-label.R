@@ -14,14 +14,17 @@
 #' @export 
 litTextLabelInput <- function(
 	name = "",
+  label,
 	value = "", 
-  label = "",
 	placeholder = label,
 	...,
 	id = NULL,
   class = NULL,
   callback = NULL
 ) {
+  if(missing(label))
+    stop("missing `label`")
+
 	meta <- serialise2(...)
 	tag2(
 		"litter-textlabel", 
