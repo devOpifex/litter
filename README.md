@@ -99,7 +99,7 @@ list(
 )
 ```
 
-## Props
+## Properties
 
 Whilst inputs that share `name` trigger the same input it can be difficult to 
 distinguish between inputs.
@@ -169,8 +169,10 @@ ui <- fluidPage(
 
 server <- function(input, output){
   observeEvent(input$txt, {
-    if(input$txt$value == "")
+    if(input$txt$value == ""){
+      update_input(name = "txt", class = "")
       return()
+    }
 
     if(input$txt$value == "error"){
       update_input(name = "txt", class = "is-invalid")
