@@ -16,9 +16,8 @@ which directly translates to an `id` in the generated HTML.
 
 This means every input must be unique which
 makes it's difficult to dynamically.
-
-Also, because of the latter, one can only `observe` individual
-inputs as opposed to observing changes in many inputs at once.
+Whilst manageable UI-side it makes a mess server-side as one has
+to dynamically create and destryo observers.
 
 This project takes inspiration from vanilla JavaScript where one can
 observe on any valid selector such as a `.class`
@@ -88,8 +87,8 @@ This makes it easier to work with generated inputs.
 - All inputs can be updated with `update_input`
 - All inputs return data in the same format:
 - All inputs accept a `callback` argument: Javascript callback function
-- All inputs return the same data structure
 - Labels are not part of the input
+- All inputs return the same data structure
 
 ```r
 list(
@@ -184,6 +183,48 @@ server <- function(input, output){
 }
 
 shinyApp(ui, server)
+```
+
+## Generate
+
+```r
+library(shiny)
+library(litter)
+
+ui <- fluidPage(
+  theme = bslib::bs_theme(5L),
+  litRangeInput(
+    "n",
+    value = 5,
+    min = 3,
+    max = 10
+  ),
+  uiOutput("created"),
+  verbatimTextOutput("result")
+)
+
+server <- function(input, output, session) {
+  output$created <- renderUI({
+    # we create n input
+    lapply(seq(input$n$value), \(x){
+      div(
+        class = "mb-1",
+        span("Input", x),
+        # all inputs have the same name
+        litTextInput(
+          name = "text",
+          n = x
+        )
+      )
+    })
+  })
+
+  output$result <- renderPrint({
+    print(input$text)
+  })
+}
+
+shinyApp(ui, server, options = list(port = 3000L))
 ```
 
 ## Styling
