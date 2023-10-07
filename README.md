@@ -14,9 +14,8 @@ As much as we love the shiny web framework, one great limitation
 is how inputs are processed. Inputs are set given an `inputId` 
 which directly translates to an `id` in the generated HTML.
 
-This means inputs can only be created individually, one function
-call creates a single input as this `id`s in HTML have to be unique.
-This makes it's difficult to dynamically.
+This means every input must be unique which
+makes it's difficult to dynamically.
 
 Also, because of the latter, one can only `observe` individual
 inputs as opposed to observing changes in many inputs at once.
@@ -29,9 +28,8 @@ one can have a single `observe` for multiple inputs.
 This project implements something similar for shiny by allowing
 users to create inputs that, instead of `inputId`, take
 a `name` argument which __can be shared by multiple inputs__. 
-This makes it is possible to sensibly use
-dynamically generated inputs in R as well as open the door
-to many other opportunities.
+This makes it is possible to sensibly dynamically generate 
+inputs in R.
 
 You can see a small explanation/example with: `gallery()`.
 
