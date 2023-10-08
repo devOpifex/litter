@@ -11,7 +11,8 @@ litTextInput(
   ...,
   id = NULL,
   class = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_connect = TRUE
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ litTextInput(
 \item{class}{Any additional classes.}
 
 \item{callback}{A JavaScript callback functions that accepts one argument.}
+
+\item{send_on_connect}{Whether to send the input value on connect.}
 }
 \description{
 Create a text input.

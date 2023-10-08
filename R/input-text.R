@@ -9,6 +9,7 @@
 #' @param ... Passed to props.
 #' @param class Any additional classes.
 #' @param callback A JavaScript callback functions that accepts one argument.
+#' @param send_on_connect Whether to send the input value on connect.
 #' 
 #' @export 
 litTextInput <- function(
@@ -18,7 +19,8 @@ litTextInput <- function(
 	...,
 	id = NULL,
   class = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_connect = TRUE
 ) {
 	meta <- serialise2(...)
 	tag2(
@@ -29,7 +31,8 @@ litTextInput <- function(
 		meta = meta,
 		placeholder = placeholder,
     class = class,
-    callback = callback
+    callback = callback,
+    send_on_connect = send_on_connect
 	)
 }
 

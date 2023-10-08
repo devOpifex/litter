@@ -14,6 +14,13 @@ export class LitInput extends LitElement {
     priority: { type: String },
     callback: { type: String },
     id: { type: String },
+    send_on_connect: { 
+      type: Boolean,
+      converter: (value, type) => {
+        value = value.toLowerCase();
+        return value == "false" ? false : true;
+      }
+    },
     meta: {},
   };
 
@@ -25,6 +32,7 @@ export class LitInput extends LitElement {
     this.id = null;
     this.timeout = null;
     this.callback = "";
+    this.send_on_connect = true;
   }
 
   firstUpdated() {
@@ -73,6 +81,9 @@ export class LitInput extends LitElement {
   }
 
   _sendOnConnect() {
+    if(!this.send_on_connect)
+      return;
+
     $(document).on("shiny:connected", (e) => {
       this._send();
     });

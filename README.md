@@ -136,6 +136,10 @@ shinyApp(ui, server)
 
 ## Callback
 
+You can pass a JavaScript callback function,
+in which case it is called instead of sending the value
+to the shiny server.
+
 ```r
 library(shiny)
 library(litter)
@@ -153,6 +157,8 @@ shinyApp(ui, server)
 ```
 
 ## Update
+
+All inputs can be updated with `update_input`.
 
 ```r
 library(shiny)
@@ -186,6 +192,8 @@ shinyApp(ui, server)
 ```
 
 ## Generate
+
+An example of generating inputs with {litter}.
 
 ```r
 library(shiny)
