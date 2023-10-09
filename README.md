@@ -85,10 +85,9 @@ This makes it easier to work with generated inputs.
 - All input functions start in `lit`.
 - All inputs have a `value` (even if it can be a vector)
 - All inputs can be updated with `update_input`
-- All inputs return data in the same format:
 - All inputs accept a `callback` argument: Javascript callback function
 - Labels are not part of the input
-- All inputs return the same data structure
+- All inputs return data in the same format:
 
 ```r
 list(
