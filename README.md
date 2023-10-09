@@ -15,9 +15,9 @@ is how inputs are processed. Inputs are set given an `inputId`
 which directly translates to an `id` in the generated HTML.
 
 This means every input must be unique which
-makes it's difficult to dynamically.
+makes it's difficult to dynamically generate inputs.
 Whilst manageable UI-side it makes a mess server-side as one has
-to dynamically create and destryo observers.
+to dynamically create and destroy observers.
 
 This project takes inspiration from vanilla JavaScript where one can
 observe on any valid selector such as a `.class`
