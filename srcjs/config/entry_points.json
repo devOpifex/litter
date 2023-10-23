@@ -3,6 +3,10 @@
     "import": "./srcjs/components/button.js",
     "dependOn": ["lit", "bs5"]
   },
+  "link": {
+    "import": "./srcjs/components/link.js",
+    "dependOn": ["lit", "bs5"]
+  },
   "text": {
     "import": "./srcjs/components/text.js",
     "dependOn": ["lit", "bs5"]

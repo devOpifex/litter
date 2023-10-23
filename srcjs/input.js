@@ -1,11 +1,11 @@
-import { html, LitElement } from "lit";
+import { css, html, LitElement } from "lit";
 import { getBs5 } from "./css/bs5";
 import "Shiny";
 import "jQuery";
 import "./update.js";
 
 export class LitInput extends LitElement {
-  static styles = [getBs5()];
+  static styles = [getBs5(), css`.pointer {cursor: pointer;}`];
 
   static properties = {
     value: { type: String },
@@ -14,12 +14,12 @@ export class LitInput extends LitElement {
     priority: { type: String },
     callback: { type: String },
     id: { type: String },
-    send_on_connect: { 
+    send_on_connect: {
       type: Boolean,
       converter: (value, type) => {
         value = value.toLowerCase();
         return value == "false" ? false : true;
-      }
+      },
     },
     meta: {},
   };
@@ -81,8 +81,9 @@ export class LitInput extends LitElement {
   }
 
   _sendOnConnect() {
-    if(!this.send_on_connect)
+    if (!this.send_on_connect) {
       return;
+    }
 
     $(document).on("shiny:connected", (e) => {
       this._send();
