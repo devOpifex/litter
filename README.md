@@ -11,16 +11,16 @@
 ## Rationale
 
 As much as we love the shiny web framework, one great limitation
-is how inputs are processed. Inputs are set given an `inputId` 
+is how inputs are handled. Inputs are set given an `inputId` 
 which directly translates to an `id` in the generated HTML.
 
 This means every input must be unique which
 makes it's difficult to dynamically generate inputs.
-Whilst manageable UI-side it makes a mess server-side as one has
+Whilst manageable UI-side with a simple loop it makes a mess server-side as one has
 to dynamically create and destroy observers.
 
 This project takes inspiration from vanilla JavaScript where one can
-observe on any valid selector such as a `.class`
+"observe" on any valid selector such as a `.class`
 (as opposed to shiny which can only observe on `#id`), this means
 one can have a single `observe` for multiple inputs.
 
@@ -30,7 +30,7 @@ a `name` argument which __can be shared by multiple inputs__.
 This makes it is possible to sensibly dynamically generate 
 inputs in R.
 
-You can see a small explanation/example with: `gallery()`.
+You can see a small explanation/example with `gallery()`.
 
 ## Limitations
 
@@ -78,14 +78,12 @@ server <- function(input, output, session){
 shinyApp(ui, server)
 ```
 
-This makes it easier to work with generated inputs.
-
 ## Conventions
 
 - All input functions start in `lit`.
-- All inputs have a `value` (even if it can be a vector)
+- All inputs have a `value` (even if it can be a vector of multiple values)
 - All inputs can be updated with `update_input`
-- All inputs accept a `callback` argument: Javascript callback function
+- All inputs accept a `callback` argument (Javascript function)
 - Labels are not part of the input
 - All inputs return data in the same format:
 
