@@ -1,4 +1,4 @@
-(self.webpackChunklitter=self.webpackChunklitter||[]).push([[841],{391:(_,e,t)=>{"use strict";var s=t(392),i=(t(235),t(311),t(193));class r extends i.X{static properties={value:{type:Number}};constructor(){super(),this.value=0}firstUpdated(){}_increment(_){this.value++,this._send()}render(){return s.dy`<button 
+(self.webpackChunklitter=self.webpackChunklitter||[]).push([[841],{391:(_,e,t)=>{"use strict";var s=t(392),i=(t(235),t(311),t(193));class r extends i.X{static properties={value:{type:Number}};constructor(){super(),this.value=0,this.priority="event"}firstUpdated(){}_increment(_){this.value++,this._send()}render(){return s.dy`<button 
 			@click="${this._increment}" 
 			class='btn btn-default ${this.class}'>
 			<slot></slot>

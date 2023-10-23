@@ -11,6 +11,7 @@ export class ActionLink extends LitInput {
   constructor() {
     super();
     this.value = 0;
+    this.priority = "event";
   }
 
   firstUpdated() {
