@@ -7,7 +7,12 @@ code <- function(...){
 card_with_inputs <- function(i){
   tagList(
     span("Input", i, class = "text-muted fs-6"),
-    litTextInput(name = "created", class = "mb-2", n = i)
+    litTextInput(
+      name = "created", 
+      class = "mb-2", 
+      send_on_render = FALSE,
+      n = i
+    )
   )
 }
 
