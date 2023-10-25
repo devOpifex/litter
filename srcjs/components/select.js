@@ -15,7 +15,6 @@ export class Select extends LitInput {
 
   firstUpdated() {
     this.shadowRoot.querySelector("select").value = this.value;
-    this._sendOnConnect();
   }
 
   updated() {

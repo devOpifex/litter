@@ -9,6 +9,7 @@
 #' @param class Any additional classes.
 #' @param value `choices` that are checked.
 #' @param callback A JavaScript callback functions that accepts one argument.
+#' @param send_on_render Whether to send the input value on render. 
 #' 
 #' @importFrom htmltools tags
 #' 
@@ -20,7 +21,8 @@ litCheckboxesInput <- function(
 	id = NULL,
   value = list(),
   class = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = TRUE
 ) {
 	meta <- serialise2(...)
 
@@ -32,7 +34,8 @@ litCheckboxesInput <- function(
     value = as.list(value) |> serialise(),
     class = class,
     options = as.list(choices) |> serialise(),
-    callback = callback
+    callback = callback,
+    send_on_render = send_on_render
 	)
 }
 

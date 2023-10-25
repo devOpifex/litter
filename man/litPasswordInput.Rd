@@ -11,7 +11,8 @@ litPasswordInput(
   ...,
   id = NULL,
   class = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = TRUE
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ litPasswordInput(
 \item{class}{Any additional classes.}
 
 \item{callback}{A JavaScript callback functions that accepts one argument.}
+
+\item{send_on_render}{Whether to send the input value on render.}
 }
 \description{
 Create a password input.

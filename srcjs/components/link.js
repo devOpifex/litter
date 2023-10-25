@@ -14,10 +14,7 @@ export class ActionLink extends LitInput {
     this.priority = "event";
   }
 
-  firstUpdated() {
-  }
-
-  _increment(e) {
+  _increment(_event) {
     this.value++;
     this._send();
   }

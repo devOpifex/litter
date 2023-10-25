@@ -10,6 +10,7 @@
 #' @param ... Passed to props.
 #' @param class Any additional classes.
 #' @param callback A JavaScript callback functions that accepts one argument.
+#' @param send_on_render Whether to send the input value on render.
 #' 
 #' @export 
 litTextLabelInput <- function(
@@ -20,7 +21,8 @@ litTextLabelInput <- function(
 	...,
 	id = NULL,
   class = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = TRUE
 ) {
   if(missing(label))
     stop("missing `label`")
@@ -35,7 +37,8 @@ litTextLabelInput <- function(
 		placeholder = placeholder,
     class = class,
     label = label,
-    callback = callback
+    callback = callback,
+    send_on_render = send_on_render
 	)
 }
 

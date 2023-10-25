@@ -13,7 +13,6 @@ export class Switch extends LitInput {
     if (this.value) {
       this.shadowRoot.querySelector("input").checked = true;
     }
-    this._sendOnConnect();
   }
 
   updated() {

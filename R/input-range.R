@@ -10,6 +10,7 @@
 #' @param step Incremental steps the range must take.
 #' @param class Any additional classes.
 #' @param callback A JavaScript callback functions that accepts one argument.
+#' @param send_on_render Whether to send the input value on render.
 #' 
 #' @examples 
 #' library(shiny)
@@ -39,7 +40,8 @@ litRangeInput <- function(
 	step = NULL,
 	value = NULL,
   class = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = TRUE
 ) {
 	meta <- serialise2(...)
 
@@ -53,6 +55,7 @@ litRangeInput <- function(
 		value = value,
     meta = meta,
     class = class,
-    callback = callback
+    callback = callback,
+    send_on_render = send_on_render
 	)
 }

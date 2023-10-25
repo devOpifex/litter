@@ -11,7 +11,8 @@ litActionButton(
   id = NULL,
   class = NULL,
   value = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = FALSE
 )
 }
 \arguments{
@@ -29,6 +30,8 @@ or valid \code{shiny::tags}.}
 \item{value}{Value of the input.}
 
 \item{callback}{A JavaScript callback functions that accepts one argument.}
+
+\item{send_on_render}{Whether to send the input value on render.}
 }
 \description{
 Create an action button.

@@ -14,14 +14,15 @@ export class LitInput extends LitElement {
     priority: { type: String },
     callback: { type: String },
     id: { type: String },
-    send_on_connect: {
+    send_on_render: {
       type: Boolean,
-      converter: (value, type) => {
+      converter: (value, _) => {
         value = value.toLowerCase();
         return value == "false" ? false : true;
       },
     },
     meta: {},
+    rendered: { type: Boolean, state: false },
   };
 
   constructor() {
@@ -32,16 +33,13 @@ export class LitInput extends LitElement {
     this.id = null;
     this.timeout = null;
     this.callback = "";
-    this.send_on_connect = true;
-  }
-
-  firstUpdated() {
-    this._sendOnConnect();
+    this.rendered = false;
+    this.send_on_render = true;
   }
 
   _send() {
     if (this.callback) {
-      let cb = eval(this.callback);
+      const cb = eval(this.callback);
       cb(this);
       return;
     }
@@ -50,7 +48,13 @@ export class LitInput extends LitElement {
       return;
     }
 
-    let data = {
+    if (!this.rendered && !this.send_on_render) {
+      return;
+    }
+
+    this.rendered = true;
+
+    const data = {
       props: this.meta,
       value: this.value,
     };
@@ -59,16 +63,12 @@ export class LitInput extends LitElement {
       data.id = this.id;
     }
 
+    // we try to send the value
+    // it may fail because we send it before Shiny connects
     try {
-      Shiny.setInputValue(
-        this.name + ":litter.parse",
-        data,
-        {
-          priority: this.priority,
-        },
-      );
-    } catch (error) {
-      console.error("shiny not connected");
+      this._setInputValue(data);
+    } catch (_error) {
+      this._sendOnConnect(data);
     }
   }
 
@@ -80,13 +80,19 @@ export class LitInput extends LitElement {
     }, 250);
   }
 
-  _sendOnConnect() {
-    if (!this.send_on_connect) {
-      return;
-    }
+  _setInputValue(data) {
+    Shiny.setInputValue(
+      this.name + ":litter.parse",
+      data,
+      {
+        priority: this.priority,
+      },
+    );
+  }
 
-    $(document).on("shiny:connected", (e) => {
-      this._send();
+  _sendOnConnect(data) {
+    $(document).on("shiny:connected", () => {
+      this._setInputValue(data);
     });
   }
 }

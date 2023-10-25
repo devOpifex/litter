@@ -12,7 +12,8 @@ litDatalistInput(
   value = NULL,
   class = NULL,
   placeholder = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = TRUE
 )
 }
 \arguments{
@@ -31,6 +32,8 @@ litDatalistInput(
 \item{placeholder}{Placeholder value.}
 
 \item{callback}{A JavaScript callback functions that accepts one argument.}
+
+\item{send_on_render}{Whether to send the input value on render.}
 }
 \description{
 Create a datalist input.

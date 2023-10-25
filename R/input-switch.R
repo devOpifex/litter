@@ -9,6 +9,7 @@
 #' @param ... Passed to props.
 #' @param class Any additional classes.
 #' @param callback A JavaScript callback functions that accepts one argument.
+#' @param send_on_render Whether to send the input value on render.
 #' 
 #' @export 
 litSwitchInput <- function(
@@ -18,7 +19,8 @@ litSwitchInput <- function(
 	...,
 	id = NULL,
   class = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = TRUE
 ) {
 	meta <- serialise2(...)
 	tag2(
@@ -29,7 +31,8 @@ litSwitchInput <- function(
 		meta = meta,
 		label = label,
     class = class,
-    callback = callback
+    callback = callback,
+    send_on_render = send_on_render
 	)
 }
 

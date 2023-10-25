@@ -10,6 +10,7 @@
 #' @param value Value of the input.
 #' @param placeholder Placeholder value.
 #' @param callback A JavaScript callback functions that accepts one argument.
+#' @param send_on_render Whether to send the input value on render.
 #' 
 #' @importFrom htmltools tags
 #' 
@@ -26,7 +27,8 @@ litDatalistInput <- function(
   value = NULL,
   class = NULL,
   placeholder = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = TRUE
 ) {
 	meta <- serialise2(...)
 
@@ -39,7 +41,8 @@ litDatalistInput <- function(
     class = class,
     options = make_options(choices) |> serialise(),
     placeholder = placeholder,
-    callback = callback
+    callback = callback,
+    send_on_render = send_on_render
 	)
 }
 

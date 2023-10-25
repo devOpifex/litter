@@ -12,7 +12,7 @@ litTextInput(
   id = NULL,
   class = NULL,
   callback = NULL,
-  send_on_connect = TRUE
+  send_on_render = TRUE
 )
 }
 \arguments{
@@ -30,7 +30,7 @@ litTextInput(
 
 \item{callback}{A JavaScript callback functions that accepts one argument.}
 
-\item{send_on_connect}{Whether to send the input value on connect.}
+\item{send_on_render}{Whether to send the input value on connect.}
 }
 \description{
 Create a text input.

@@ -9,6 +9,7 @@
 #' @param class Any additional classes.
 #' @param value `choices` that are checked.
 #' @param callback A JavaScript callback functions that accepts one argument.
+#' @param send_on_render Whether to send the input value on render.
 #' 
 #' @importFrom htmltools tags
 #' 
@@ -20,7 +21,8 @@ litRadioInput <- function(
 	id = NULL,
   value = NULL,
   class = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = TRUE
 ) {
 	meta <- serialise2(...)
 
@@ -35,7 +37,8 @@ litRadioInput <- function(
     value = value,
     class = class,
     options = as.list(choices) |> serialise(),
-    callback = callback
+    callback = callback,
+    send_on_render = send_on_render
 	)
 }
 

@@ -19,8 +19,6 @@ export class Datalist extends LitInput {
   }
 
   firstUpdated() {
-    this._sendOnConnect();
-
     if (!this.value) {
       return;
     }

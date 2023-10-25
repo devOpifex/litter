@@ -10,6 +10,7 @@
 #' @param class Any additional classes.
 #' @param value Value of the input.
 #' @param callback A JavaScript callback functions that accepts one argument.
+#' @param send_on_render Whether to send the input value on render. 
 #' 
 #' @examples 
 #' library(shiny)
@@ -44,7 +45,8 @@ litActionButton <- function(
 	id = NULL,
   class = NULL,
   value = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = FALSE
 ) {
 	meta <- serialise2(...)
 
@@ -59,7 +61,8 @@ litActionButton <- function(
     class = class,
     value = value,
     callback = callback,
-		content
+		content,
+    send_on_render = send_on_render
 	)
 }
 

@@ -9,6 +9,7 @@
 #' @param class Any additional classes.
 #' @param value Value of the input.
 #' @param callback A JavaScript callback functions that accepts one argument.
+#' @param send_on_render Whether to send the input value on render.
 #' 
 #' @importFrom htmltools tags
 #' 
@@ -20,7 +21,8 @@ litFilterInput <- function(
 	id = NULL,
   value = NULL,
   class = NULL,
-  callback = NULL
+  callback = NULL,
+  send_on_render = TRUE
 ) {
 	meta <- serialise2(...)
 
@@ -38,7 +40,8 @@ litFilterInput <- function(
 		meta = meta,
     value = value,
     class = class,
-    callback = callback
+    callback = callback,
+    send_on_render = send_on_render
 	)
 }
 

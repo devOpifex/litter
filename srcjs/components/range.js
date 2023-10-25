@@ -20,7 +20,6 @@ export class Range extends LitInput {
 
   firstUpdated() {
     this._input = this.shadowRoot.querySelector("input");
-    this._sendOnConnect();
   }
 
   willUpdate(props) {

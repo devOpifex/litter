@@ -14,10 +14,7 @@ export class ActionButton extends LitInput {
     this.priority = "event";
   }
 
-  firstUpdated() {
-  }
-
-  _increment(e) {
+  _increment() {
     this.value++;
     this._send();
   }
