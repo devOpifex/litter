@@ -85,7 +85,7 @@ shinyApp(ui, server)
 - All inputs can be updated with `update_input`
 - All inputs accept a `callback` argument (Javascript function)
 - Labels are not part of the input
-- All inputs accept `send_on_render` argument
+- All inputs accept a `send_on_render` argument
 - All inputs return data in the same format:
 
 ```r
