@@ -12,7 +12,8 @@ litTextInput(
   id = NULL,
   class = NULL,
   callback = NULL,
-  send_on_render = TRUE
+  send_on_render = TRUE,
+  send_on = c("deferred", "enter")
 )
 }
 \arguments{
@@ -31,6 +32,9 @@ litTextInput(
 \item{callback}{A JavaScript callback functions that accepts one argument.}
 
 \item{send_on_render}{Whether to send the input value on connect.}
+
+\item{send_on}{Whether to send the input when the user hits the enter key or
+to send it in a deferred manner.}
 }
 \description{
 Create a text input.

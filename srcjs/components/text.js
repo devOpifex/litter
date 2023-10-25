@@ -6,10 +6,28 @@ import { LitInput } from "../input.js";
 export class Text extends LitInput {
   _keyup() {
     this.value = this.shadowRoot.querySelector("input").value;
+
+    if (this.send_on != "deferred") {
+      return;
+    }
+
+    this._sendThrottle();
   }
 
-  updated() {
-    this._sendThrottle();
+  firstUpdated() {
+    this._send();
+  }
+
+  _keydown(event) {
+    if (this.send_on != "enter") {
+      return;
+    }
+
+    if (event.key != "Enter") {
+      return;
+    }
+
+    this._send();
   }
 
   render() {
@@ -18,6 +36,7 @@ export class Text extends LitInput {
       value = '${this.value}'
       type = 'text'
 			@keyup='${this._keyup}'
+			@keydown='${this._keydown}'
 			placeholder='${this.placeholder}'>`;
   }
 }

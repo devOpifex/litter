@@ -23,6 +23,7 @@ export class LitInput extends LitElement {
     },
     meta: {},
     rendered: { type: Boolean, state: false },
+    send_on: { type: String },
   };
 
   constructor() {
@@ -35,6 +36,7 @@ export class LitInput extends LitElement {
     this.callback = "";
     this.rendered = false;
     this.send_on_render = true;
+    this.send_on = "deferred";
   }
 
   _send() {
@@ -49,6 +51,7 @@ export class LitInput extends LitElement {
     }
 
     if (!this.rendered && !this.send_on_render) {
+      this.rendered = true;
       return;
     }
 

@@ -10,6 +10,8 @@
 #' @param class Any additional classes.
 #' @param callback A JavaScript callback functions that accepts one argument.
 #' @param send_on_render Whether to send the input value on render.
+#' @param send_on Whether to send the input when the user hits the enter key or 
+#'  to send it in a deferred manner.
 #' 
 #' @export 
 litPasswordInput <- function(
@@ -20,7 +22,8 @@ litPasswordInput <- function(
 	id = NULL,
   class = NULL,
   callback = NULL,
-  send_on_render = TRUE
+  send_on_render = TRUE,
+  send_on = c("deferred", "enter")
 ) {
 	meta <- serialise2(...)
 	tag2(
@@ -32,7 +35,8 @@ litPasswordInput <- function(
     placeholder = placeholder,
     class = class,
     callback = callback,
-    send_on_render = send_on_render
+    send_on_render = send_on_render,
+    send_on = match.arg(send_on)
 	)
 }
 

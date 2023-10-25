@@ -1,23 +1,16 @@
 import { html, LitElement } from "lit";
 import "Shiny";
 import "jQuery";
-import { LitInput } from "../input.js";
+import { Text } from "./text.js";
 
-export class Password extends LitInput {
-  _change() {
-    this.value = this.shadowRoot.querySelector("input").value;
-  }
-
-  updated() {
-    this._sendThrottle();
-  }
-
+export class Password extends Text {
   render() {
     return html`<input
       class = 'form-control ${this.class}'
       value = '${this.value}'
       type = 'password'
-			@keyup='${this._change}'
+			@keyup='${this._keyup}'
+			@keydown='${this._keydown}'
 			placeholder='${this.placeholder}'>`;
   }
 }

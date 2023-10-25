@@ -11,6 +11,8 @@
 #' @param class Any additional classes.
 #' @param callback A JavaScript callback functions that accepts one argument.
 #' @param send_on_render Whether to send the input value on render.
+#' @param send_on Whether to send the input when the user hits the enter key or 
+#'  to send it in a deferred manner.
 #' 
 #' @export 
 litTextLabelInput <- function(
@@ -22,7 +24,8 @@ litTextLabelInput <- function(
 	id = NULL,
   class = NULL,
   callback = NULL,
-  send_on_render = TRUE
+  send_on_render = TRUE,
+  send_on = c("deferred", "enter")
 ) {
   if(missing(label))
     stop("missing `label`")
@@ -38,7 +41,8 @@ litTextLabelInput <- function(
     class = class,
     label = label,
     callback = callback,
-    send_on_render = send_on_render
+    send_on_render = send_on_render,
+    send_on = match.arg(send_on)
 	)
 }
 

@@ -1,20 +1,12 @@
 import { html, LitElement } from "lit";
 import "Shiny";
 import "jQuery";
-import { LitInput } from "../input.js";
+import { Text } from "./text.js";
 
-export class TextLabel extends LitInput {
+export class TextLabel extends Text {
   static properties = {
     label: { type: String },
   };
-
-  _change() {
-    this.value = this.shadowRoot.querySelector("input").value;
-  }
-
-  updated() {
-    this._send();
-  }
 
   render() {
     return html`
@@ -23,7 +15,8 @@ export class TextLabel extends LitInput {
         class = 'form-control'
         value = '${this.value}'
         type = 'text'
-        @keyup='${this._change}'
+        @keyup='${this._keyup}'
+			  @keydown='${this._keydown}'
         id="floating"
         placeholder='${this.placeholder}'>
       <label for="floating">${this.label}</label>
