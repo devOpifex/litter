@@ -8,6 +8,7 @@
 #' @param input The `input` to reveal.
 #' @param ... Passed to props.
 #' @param callback A JavaScript callback functions that accepts one argument.
+#' @param restore Whether to set the input `value` to the `display` text and vice versa.
 #' 
 #' @details This can be updated with the `feedback` argument in [update_input()]
 #' as well as `accept`, a boolean to indicate whether to accept the value set.
@@ -20,7 +21,8 @@ litTogglerInput <- function(
   display,
   input,
   ...,
-  callback = NULL
+  callback = NULL,
+  restore = TRUE
 ) {
   if(is.character(display))
     display <- span(display)
@@ -39,7 +41,8 @@ litTogglerInput <- function(
       tagAppendAttributes(slot = "input"),
     meta = meta,
     accept = "true",
-    callback = callback
+    callback = callback,
+    restore = restore
 	)
 }
 

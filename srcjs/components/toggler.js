@@ -11,6 +11,7 @@ export class Toggler extends LitInput {
     feedback: { type: String },
     accept: { type: String },
     default: { type: String, attribute: false },
+    restore: { type: Boolean },
   };
 
   constructor() {
@@ -19,6 +20,7 @@ export class Toggler extends LitInput {
     this.feedback = "";
     this.accept = true;
     this.default = "";
+    this.restore = true;
   }
 
   _toggle() {
@@ -26,6 +28,13 @@ export class Toggler extends LitInput {
     this.shadowRoot.querySelector("slot[name=display]").classList.toggle(
       "d-none",
     );
+
+    if (!this.inputShown) {
+      this.shadowRoot.querySelector("slot[name=input]").assignedElements({
+        flatten: true,
+      })[0].value =
+        this.shadowRoot.querySelector("slot[name=display]").textContent;
+    }
 
     this.inputShown = !this.inputShown;
   }
@@ -38,6 +47,7 @@ export class Toggler extends LitInput {
     this.shadowRoot.querySelector("slot[name=input]").assignedElements({
       flatten: true,
     })[0].value = this.value;
+
     this._toggle();
   }
 
@@ -55,7 +65,22 @@ export class Toggler extends LitInput {
 
     this._toggle();
     this._getValue();
+
+    if (this.restore) {
+      this.shadowRoot.querySelector("slot[name=display]").assignedElements({
+        flatten: true,
+      })[0].textContent = this.value;
+    }
+
     this._send();
+  }
+
+  _keydown(event) {
+    if (event.key != "Enter") {
+      return;
+    }
+
+    this._validate();
   }
 
   _cancel() {
@@ -71,7 +96,7 @@ export class Toggler extends LitInput {
       <slot @click=${this._showInput} name="display">Click me</slot>
       <div class="d-none input position-relative d-flex">
         <div class="flex-grow-1">
-          <slot name="input"></slot>
+          <slot @keydown=${this._keydown} name="input"></slot>
         </div>
         <div class="flex-shrink-1">
           <button @click=${this._cancel} class="btn btn-danger">
