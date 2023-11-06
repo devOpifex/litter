@@ -1,4 +1,4 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import "Shiny";
 import "jQuery";
 import { LitInput } from "../input.js";
@@ -14,11 +14,12 @@ export class Color extends LitInput {
 
   render() {
     return html`<input
-      class = 'form-control ${this.class}'
-      value = '${this.value}'
-      type = 'color'
-			@change='${this._change}'
-			placeholder='${this.placeholder}'>`;
+      class="form-control ${this.class}"
+      value="${this.value}"
+      type="color"
+      @change="${this._change}"
+      placeholder="${this.placeholder}"
+    />`;
   }
 }
 

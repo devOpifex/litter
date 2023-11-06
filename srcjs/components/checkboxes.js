@@ -1,4 +1,4 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import "Shiny";
 import "jQuery";
 import { LitInput } from "../input.js";

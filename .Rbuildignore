@@ -10,3 +10,4 @@
 ^jsconfig\.json$
 ^makefile$
 ^test\.R$
+^\.eslintrc\.js$
