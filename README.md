@@ -2,7 +2,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-# litter
+<img src="inst/logo.png" width=250 />
 
 [Lit](https://lit.dev) components for shiny, with a twist.
 
