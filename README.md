@@ -32,6 +32,27 @@ inputs in R.
 
 You can see a small explanation/example with `gallery()`.
 
+## Inputs
+
+Currently implemented inputs:
+
+- `litActionButton`
+- `litActionLink`
+- `litCheckboxesInput`
+- `litColorInput`
+- `litDatalistInput`
+- `litFilterInput`
+- `litPasswordInput`
+- `litTextInput`
+- `litTextAreaInput`
+- `litRadioInput`
+- `litSwitchInput`
+- `litTextLabelInput`
+- `litTogglerInput`
+- `litRangeInput`
+- `litSelectInput`
+- `litSelectizeInput`
+
 ## Limitations
 
 - Only works with bslib's Bootstrap 5.
