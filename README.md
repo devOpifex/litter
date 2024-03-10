@@ -258,5 +258,6 @@ shinyApp(ui, server, options = list(port = 3000L))
 
 ## Styling
 
-All styling is taken from bslib's set theme.
+All styling is taken from bslib's set theme as well as the `class` argument of 
+all inputs.
 
