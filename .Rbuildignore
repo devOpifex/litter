@@ -11,3 +11,5 @@
 ^makefile$
 ^test\.R$
 ^\.eslintrc\.js$
+^docs$
+^doctave\.yaml$

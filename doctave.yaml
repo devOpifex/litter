@@ -1,0 +1,13 @@
+---
+title: "Litter"
+logo: assets/logo.png
+navigation:
+  - path: docs/README.md
+  - path: docs/introduction.md
+  - path: docs/installation.md
+  - path: docs/get-started.md
+  - path: docs/props.md
+  - path: docs/callback.md
+  - path: docs/update.md
+  - path: docs/Examples
+    children: "*"
