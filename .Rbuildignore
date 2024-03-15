@@ -13,3 +13,4 @@
 ^\.eslintrc\.js$
 ^docs$
 ^doctave\.yaml$
+^site$
