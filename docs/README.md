@@ -5,6 +5,8 @@ title: "Home"
 Welcome to {litter}
 =============
 
+[Repository](https://github.com/devOpifex/litter)
+
 As much as we love the [shiny](https://shiny.posit.co/) 
 web framework, one great limitation
 is how inputs are handled. Inputs are set given an `inputId` 

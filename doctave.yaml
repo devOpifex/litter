@@ -1,6 +1,8 @@
 ---
 title: "Litter"
 logo: assets/logo.png
+colors:
+  main: "#44476a"
 navigation:
   - path: docs/README.md
   - path: docs/introduction.md
