@@ -25,7 +25,7 @@ one can have a single <code>observe</code> for multiple inputs.
 This project implements something similar for shiny by allowing
 users to create inputs that, instead of <code>inputId</code>, take
 a <code>name</code> argument which <strong>can be shared by multiple inputs</strong>. 
-This makes it is possible to sensibly dynamically generate 
-inputs in R.
+This makes it possible to sensibly dynamically generate inputs in R as
+each input <strong>does not</strong> need its corresponding observer.
 
-You can see a small explanation/example with <code>gallery()</code>.
+You can see a small explanation/example with <code>litter::gallery()</code>.
