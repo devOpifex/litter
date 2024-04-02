@@ -6,18 +6,18 @@
 #' 
 #' @keywords internal
 serialise <- function(data){
-	toJSON(
-		data,
-		dataframe = "rows",
-		auto_unbox = TRUE
-	)
+  toJSON(
+    data,
+    dataframe = "rows",
+    auto_unbox = TRUE
+  )
 }
 
 #' @keywords internal
 serialise2 <- function(...){
-	toJSON(
-		list(...),
-		dataframe = "rows",
-		auto_unbox = TRUE
-	)
+  toJSON(
+    list(...),
+    dataframe = "rows",
+    auto_unbox = TRUE
+  )
 }

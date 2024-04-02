@@ -14,17 +14,17 @@
 #' @importFrom htmltools tags
 #' 
 #' @export 
-litFilterInput <- function(
-	name = "",
-	...,
+litFilterInput <- function( # nolint
+  name = "",
+  ...,
   dataset = NULL,
-	id = NULL,
+  id = NULL,
   value = NULL,
   class = NULL,
   callback = NULL,
   send_on_render = TRUE
 ) {
-	meta <- serialise2(...)
+  meta <- serialise2(...)
 
   if(!is.null(dataset))
     dataset <- dataset |> get_variables()
@@ -32,17 +32,17 @@ litFilterInput <- function(
   if(is.null(dataset))
     dataset <- list()
 
-	tag2(
-		"litter-filter", 
+  tag2(
+    "litter-filter", 
     dataset = dataset |> serialise(),
-		id = id,
-		name = name, 
-		meta = meta,
+    id = id,
+    name = name, 
+    meta = meta,
     value = value,
     class = class,
     callback = callback,
     send_on_render = send_on_render
-	)
+  )
 }
 
 get_variables <- function(data){

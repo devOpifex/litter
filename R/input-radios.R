@@ -14,32 +14,30 @@
 #' @importFrom htmltools tags
 #' 
 #' @export 
-litRadioInput <- function(
-	name = "",
-	choices = list(),
-	...,
-	id = NULL,
+litRadioInput <- function( # nolint
+  name = "",
+  choices = list(),
+  ...,
+  id = NULL,
   value = NULL,
   class = NULL,
   callback = NULL,
   send_on_render = TRUE
 ) {
-	meta <- serialise2(...)
+  meta <- serialise2(...)
 
   if(is.null(value))
     value <- choices[1]
 
-	tag2(
-		"litter-radios", 
-		id = id,
-		name = name, 
-		meta = meta,
+  tag2(
+    "litter-radios", 
+    id = id,
+    name = name, 
+    meta = meta,
     value = value,
     class = class,
     options = as.list(choices) |> serialise(),
     callback = callback,
     send_on_render = send_on_render
-	)
+  )
 }
-
-

@@ -14,29 +14,28 @@
 #'  to send it in a deferred manner.
 #' 
 #' @export 
-litTextInput <- function(
-	name = "",
-	value = "", 
-	placeholder = "",
-	...,
-	id = NULL,
+litTextInput <- function( # nolint
+  name = "",
+  value = "", 
+  placeholder = "",
+  ...,
+  id = NULL,
   class = NULL,
   callback = NULL,
   send_on_render = TRUE,
   send_on = c("deferred", "enter")
 ) {
-	meta <- serialise2(...)
-	tag2(
-		"litter-text", 
-		id = id,
-		name = name, 
-		value = value,
-		meta = meta,
-		placeholder = placeholder,
+  meta <- serialise2(...)
+  tag2(
+    "litter-text", 
+    id = id,
+    name = name, 
+    value = value,
+    meta = meta,
+    placeholder = placeholder,
     class = class,
     callback = callback,
     send_on_render = send_on_render,
     send_on = match.arg(send_on)
-	)
+  )
 }
-

@@ -12,28 +12,26 @@
 #' @param send_on_render Whether to send the input value on render 
 #' 
 #' @export 
-litColorInput <- function(
-	name = "",
-	value = "", 
-	placeholder = "",
-	...,
-	id = NULL,
+litColorInput <- function( # nolint
+  name = "",
+  value = "", 
+  placeholder = "",
+  ...,
+  id = NULL,
   class = NULL,
   callback = NULL,
   send_on_render = TRUE
 ) {
-	meta <- serialise2(...)
-	tag2(
-		"litter-color", 
-		id = id,
-		name = name, 
-		value = value,
-		meta = meta,
-		placeholder = placeholder,
+  meta <- serialise2(...)
+  tag2(
+    "litter-color", 
+    id = id,
+    name = name, 
+    value = value,
+    meta = meta,
+    placeholder = placeholder,
     class = class,
     callback = callback,
     send_on_render = send_on_render
-	)
+  )
 }
-
-

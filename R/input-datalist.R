@@ -19,30 +19,29 @@
 #' @seealso [update_datalist_input()]
 #' 
 #' @export 
-litDatalistInput <- function(
-	name = "",
-	choices = list(),
-	...,
-	id = NULL,
+litDatalistInput <- function( # nolint
+  name = "",
+  choices = list(),
+  ...,
+  id = NULL,
   value = NULL,
   class = NULL,
   placeholder = NULL,
   callback = NULL,
   send_on_render = TRUE
 ) {
-	meta <- serialise2(...)
+  meta <- serialise2(...)
 
-	tag2(
-		"litter-datalist", 
-		id = id,
-		name = name, 
-		meta = meta,
+  tag2(
+    "litter-datalist", 
+    id = id,
+    name = name, 
+    meta = meta,
     value = value,
     class = class,
     options = make_options(choices) |> serialise(),
     placeholder = placeholder,
     callback = callback,
     send_on_render = send_on_render
-	)
+  )
 }
-

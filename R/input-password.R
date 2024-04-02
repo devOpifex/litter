@@ -14,20 +14,20 @@
 #'  to send it in a deferred manner.
 #' 
 #' @export 
-litPasswordInput <- function(
-	name = "",
-	value = "", 
-	placeholder = "",
-	...,
-	id = NULL,
+litPasswordInput <- function( # nolint
+  name = "",
+  value = "", 
+  placeholder = "",
+  ...,
+  id = NULL,
   class = NULL,
   callback = NULL,
   send_on_render = TRUE,
   send_on = c("deferred", "enter")
 ) {
-	meta <- serialise2(...)
-	tag2(
-		"litter-password", 
+  meta <- serialise2(...)
+  tag2(
+    "litter-password", 
     id = id,
     name = name, 
     value = value,
@@ -37,7 +37,5 @@ litPasswordInput <- function(
     callback = callback,
     send_on_render = send_on_render,
     send_on = match.arg(send_on)
-	)
+  )
 }
-
-

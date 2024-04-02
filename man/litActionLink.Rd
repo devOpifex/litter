@@ -40,23 +40,23 @@ Create an action button.
 library(shiny)
 
 ui <- fluidPage(
-	litActionLink(
-		"btn",
-		"First btn"
-	),
-	litActionLink(
-		"btn",
-		"Second btn"
-	)
+ litActionLink(
+   "btn",
+   "First btn"
+ ),
+ litActionLink(
+   "btn",
+   "Second btn"
+ )
 )
 
 server <- function(input, output, session){
-	observeEvent(input$btn, {
-		print(input$btn)
-	})
+ observeEvent(input$btn, {
+   print(input$btn)
+ })
 }
 
 if(interactive())
-	shinyApp(ui, server)
+ shinyApp(ui, server)
 
 }

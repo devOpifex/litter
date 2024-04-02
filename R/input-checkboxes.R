@@ -14,28 +14,28 @@
 #' @importFrom htmltools tags
 #' 
 #' @export 
-litCheckboxesInput <- function(
-	name = "",
-	choices = list(),
-	...,
-	id = NULL,
+litCheckboxesInput <- function( # nolint
+  name = "",
+  choices = list(),
+  ...,
+  id = NULL,
   value = list(),
   class = NULL,
   callback = NULL,
   send_on_render = TRUE
 ) {
-	meta <- serialise2(...)
+  meta <- serialise2(...)
 
-	tag2(
-		"litter-checkboxes", 
-		id = id,
-		name = name, 
-		meta = meta,
+  tag2(
+    "litter-checkboxes", 
+    id = id,
+    name = name, 
+    meta = meta,
     value = as.list(value) |> serialise(),
     class = class,
     options = as.list(choices) |> serialise(),
     callback = callback,
     send_on_render = send_on_render
-	)
+  )
 }
 

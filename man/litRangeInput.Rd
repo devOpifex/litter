@@ -42,7 +42,7 @@ Create a range input.
 library(shiny)
 
 ui <- fluidPage(
-	 litRangeInput("range")
+  litRangeInput("range")
 )
 
 server <- function(input, output, session){

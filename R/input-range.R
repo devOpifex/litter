@@ -16,7 +16,7 @@
 #' library(shiny)
 #' 
 #' ui <- fluidPage(
-#' 	 litRangeInput("range")
+#'   litRangeInput("range")
 #' )
 #' 
 #' server <- function(input, output, session){
@@ -31,31 +31,31 @@
 #' @importFrom shiny tags
 #' 
 #' @export 
-litRangeInput <- function(
-	name = "",
-	...,
-	id = NULL,
-	min = 0L,
-	max = 10L,
-	step = NULL,
-	value = NULL,
+litRangeInput <- function( # nolint
+  name = "",
+  ...,
+  id = NULL,
+  min = 0L,
+  max = 10L,
+  step = NULL,
+  value = NULL,
   class = NULL,
   callback = NULL,
   send_on_render = TRUE
 ) {
-	meta <- serialise2(...)
+  meta <- serialise2(...)
 
-	tag2(
-		"litter-range", 
-		id = id,
-		name = name,
-		min = min,
-		max = max,
-		step = step,
-		value = value,
+  tag2(
+    "litter-range", 
+    id = id,
+    name = name,
+    min = min,
+    max = max,
+    step = step,
+    value = value,
     meta = meta,
     class = class,
     callback = callback,
     send_on_render = send_on_render
-	)
+  )
 }

@@ -15,13 +15,13 @@
 #'  to send it in a deferred manner.
 #' 
 #' @export 
-litTextLabelInput <- function(
-	name = "",
+litTextLabelInput <- function( # nolint
+  name = "",
   label,
-	value = "", 
-	placeholder = label,
-	...,
-	id = NULL,
+  value = "", 
+  placeholder = label,
+  ...,
+  id = NULL,
   class = NULL,
   callback = NULL,
   send_on_render = TRUE,
@@ -30,20 +30,18 @@ litTextLabelInput <- function(
   if(missing(label))
     stop("missing `label`")
 
-	meta <- serialise2(...)
-	tag2(
-		"litter-textlabel", 
-		id = id,
-		name = name, 
-		value = value,
-		meta = meta,
-		placeholder = placeholder,
+  meta <- serialise2(...)
+  tag2(
+    "litter-textlabel", 
+    id = id,
+    name = name, 
+    value = value,
+    meta = meta,
+    placeholder = placeholder,
     class = class,
     label = label,
     callback = callback,
     send_on_render = send_on_render,
     send_on = match.arg(send_on)
-	)
+  )
 }
-
-

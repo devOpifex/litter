@@ -16,7 +16,7 @@
 #' @importFrom htmltools tagAppendAttributes span tagGetAttribute
 #' 
 #' @export 
-litTogglerInput <- function(
+litTogglerInput <- function( # nolint
   name,
   display,
   input,
@@ -27,12 +27,12 @@ litTogglerInput <- function(
   if(is.character(display))
     display <- span(display)
 
-	meta <- serialise2(...)
+  meta <- serialise2(...)
 
   value <- tagGetAttribute(input, "value")
 
-	tag2(
-		"litter-toggler", 
+  tag2(
+    "litter-toggler", 
     name = name,
     value = value,
     display |>
@@ -43,7 +43,5 @@ litTogglerInput <- function(
     accept = "true",
     callback = callback,
     restore = restore
-	)
+  )
 }
-
-

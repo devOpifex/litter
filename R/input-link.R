@@ -16,53 +16,52 @@
 #' library(shiny)
 #' 
 #' ui <- fluidPage(
-#' 	litActionLink(
-#' 		"btn",
-#' 		"First btn"
-#' 	),
-#' 	litActionLink(
-#' 		"btn",
-#' 		"Second btn"
-#' 	)
+#'  litActionLink(
+#'    "btn",
+#'    "First btn"
+#'  ),
+#'  litActionLink(
+#'    "btn",
+#'    "Second btn"
+#'  )
 #' )
 #' 
 #' server <- function(input, output, session){
-#' 	observeEvent(input$btn, {
-#' 		print(input$btn)
-#' 	})
+#'  observeEvent(input$btn, {
+#'    print(input$btn)
+#'  })
 #' }
 #' 
 #' if(interactive())
-#' 	shinyApp(ui, server)
+#'  shinyApp(ui, server)
 #' 
 #' @importFrom shiny tags
 #' 
 #' @export 
-litActionLink <- function(
-	name = "",
-	content = "Click me", 
-	...,
-	id = NULL,
+litActionLink <- function( # nolint
+  name = "",
+  content = "Click me", 
+  ...,
+  id = NULL,
   class = NULL,
   value = NULL,
   callback = NULL,
   send_on_render = FALSE
 ) {
-	meta <- serialise2(...)
+  meta <- serialise2(...)
 
-	if(inherits(content, "character"))
-		content <- tags$span(content)
+  if(inherits(content, "character"))
+    content <- tags$span(content)
 
-	tag2(
-		"litter-link", 
-		id = id,
-		name = name, 
-		meta = meta,
+  tag2(
+    "litter-link", 
+    id = id,
+    name = name, 
+    meta = meta,
     class = class,
     value = value,
     callback = callback,
     send_on_render = send_on_render,
-		content
-	)
+    content
+  )
 }
-

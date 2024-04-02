@@ -14,31 +14,30 @@
 #' @importFrom htmltools tags
 #' 
 #' @export 
-litSelectizeInput <- function(
-	name = "",
-	choices = list(),
-	...,
-	id = NULL,
+litSelectizeInput <- function( # nolint
+  name = "",
+  choices = list(),
+  ...,
+  id = NULL,
   value = list(),
   class = NULL,
   callback = NULL,
   send_on_render = TRUE
 ) {
-	meta <- serialise2(...)
+  meta <- serialise2(...)
 
   if(is.null(value))
     value <- get_first_option(choices)
 
-	tag2(
-		"litter-selectize", 
-		id = id,
-		name = name, 
-		meta = meta,
+  tag2(
+    "litter-selectize", 
+    id = id,
+    name = name, 
+    meta = meta,
     value = value,
     class = class,
     options = make_options(choices) |> serialise(),
     callback = callback,
     send_on_render = send_on_render
-	)
+  )
 }
-
