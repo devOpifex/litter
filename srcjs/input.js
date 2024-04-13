@@ -1,11 +1,18 @@
-import { css, html, LitElement } from "lit";
+import { css, LitElement } from "lit";
 import { getBs5 } from "./css/bs5";
 import "Shiny";
 import "jQuery";
 import "./update.js";
 
 export class LitInput extends LitElement {
-  static styles = [getBs5(), css`.pointer {cursor: pointer;}`];
+  static styles = [
+    getBs5(),
+    css`
+      .pointer {
+        cursor: pointer;
+      }
+    `,
+  ];
 
   static properties = {
     value: { type: String },
@@ -20,6 +27,7 @@ export class LitInput extends LitElement {
         value = value.toLowerCase();
         return value == "false" ? false : true;
       },
+      state: false,
     },
     meta: {},
     rendered: { type: Boolean, state: false },
@@ -75,6 +83,10 @@ export class LitInput extends LitElement {
     }
   }
 
+  firstUpdated() {
+    this.rendered = true;
+  }
+
   _sendThrottle() {
     clearTimeout(this.timeout);
 
@@ -84,13 +96,9 @@ export class LitInput extends LitElement {
   }
 
   _setInputValue(data) {
-    Shiny.setInputValue(
-      this.name + ":litter.parse",
-      data,
-      {
-        priority: this.priority,
-      },
-    );
+    Shiny.setInputValue(this.name + ":litter.parse", data, {
+      priority: this.priority,
+    });
   }
 
   _sendOnConnect(data) {

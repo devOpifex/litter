@@ -20,11 +20,12 @@ export class ActionButton extends LitInput {
   }
 
   render() {
-    return html`<button 
-			@click="${this._increment}" 
-			class='btn btn-default ${this.class}'>
-			<slot></slot>
-		</button>`;
+    return html`<button
+      @click="${this._increment}"
+      class="btn btn-default ${this.class}"
+    >
+      <slot></slot>
+    </button>`;
   }
 }
 

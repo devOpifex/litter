@@ -14,18 +14,21 @@ export class Radios extends LitInput {
   }
 
   updated() {
-    this.shadowRoot.querySelector(`input[value='${this.value}']`).checked =
-      true;
+    this.shadowRoot.querySelector(
+      `input[value='${this.value}']`,
+    ).checked = true;
     this._send();
   }
 
   _setValue() {
     let inputs = this.renderRoot.querySelectorAll("input");
-    let values = Array.from(inputs).map((input) => {
-      if (input.checked) {
-        return (input.value);
-      }
-    }).filter((el) => el != undefined);
+    let values = Array.from(inputs)
+      .map((input) => {
+        if (input.checked) {
+          return input.value;
+        }
+      })
+      .filter((el) => el != undefined);
 
     this.value = values[0];
   }
@@ -35,16 +38,21 @@ export class Radios extends LitInput {
   }
 
   render() {
-    const opts = this.options.map((el) =>
-      html`<div class="form-check ${this.class}">
-        <input class="form-check-input" type="radio" name="radios" value="${el}"/>
-        <label class="form-check-label">${el}</label>
-      </div>`
+    const opts = this.options.map(
+      (el) =>
+        html`<div class="form-check ${this.class}">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="radios"
+            value="${el}"
+          />
+          <label class="form-check-label">${el}</label>
+        </div>`,
     );
-    return html`<div class="radios-wrapper"
-			@change=${this._change}>
+    return html`<div class="radios-wrapper" @change=${this._change}>
       ${opts}
-		</div>`;
+    </div>`;
   }
 }
 

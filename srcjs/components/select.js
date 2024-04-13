@@ -1,4 +1,4 @@
-import { html, LitElement } from "lit";
+import { html } from "lit";
 import "Shiny";
 import "jQuery";
 import { LitInput } from "../input.js";
@@ -31,13 +31,15 @@ export class Select extends LitInput {
   }
 
   render() {
-    const opts = this.options.map((el) =>
-      html`<option value="${el.value}">${el.label}</option>`
+    const opts = this.options.map(
+      (el) => html`<option value="${el.value}">${el.label}</option>`,
     );
     return html`<select
-			class='form-select ${this.class}' @change=${this._change}>
+      class="form-select ${this.class}"
+      @change=${this._change}
+    >
       ${opts}
-		</select>`;
+    </select>`;
   }
 }
 
